@@ -1,0 +1,267 @@
+/* כל האלמנטים ירשו את התכונות הבאות: */
+* {
+  text-align: center; /* מרכז את הטקסט */
+  margin-left: auto; /* מרכז את האלמנט לצד שמאל של העמוד */
+  margin-right: auto; /* מרכז את האלמנט לצד ימין של העמוד */
+  color: white; /* שינוי צבע הטקסט ללבן */
+}
+
+/* עיצוב לאלמנט h1: */
+h1 {
+  font-family: 'Courier New', Courier, monospace; /* שימוש בסוגי גופנים מסוימים */
+}
+
+/* עיצוב לאלמנט h2: */
+h2 {
+  font-weight: bold; /* הוספת משקל לטקסט (מודגש) */
+  line-height: 1.6; /* גובה השורה בין השורות ב-H2 */
+  font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif; /* שימוש בסוגי גופנים מסוימים */
+}
+
+/* עיצוב לאלמנט h3: */
+h3 {
+  font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif; /* שימוש בסוגי גופנים מסוימים */
+}
+
+/* עיצוב ללינקים שיש להם מחלקות btn ו btn-outline-primary: */
+a.btn.btn-outline-primary {
+  font-weight: bold; /* הוספת משקל לטקסט (מודגש) */
+  background: rgb(0, 116, 228); /* שינוי רקע הלינקים לצבע כחול */
+}
+
+/* עיצוב לפריטי ניווט כאשר העכבר עובר מעליהם: */
+.nav-item:hover {
+  border-bottom: 2px solid #0074e4; /* הוספת קו תחתון ברגע שמעבירים את העכבר מעל הפריט */
+  transition: border-bottom 0.3s; /* אנימציה של הקו תחתון */
+}
+
+/* עיצוב לאלמנט body: */
+body {
+  display: flex; /* שימוש ב-Flexbox */
+  flex-direction: column; /* סידור האלמנטים בעמוד בכיוון האנכי (מעלה למטה) */
+  min-height: 100vh; /* גובה מינימלי של 100% מהחלון הגודל */
+  margin: 0; /* מסיר את השוליים שברירת המחדל של הדף */
+  padding: 0; /* מסיר את הריפודים שברירת המחדל של הדף */
+  background-image: url("img/back.jpg"); /* רקע בתמונת רקע */
+  background-size: cover; /* מתאים את תמונת הרקע לגודל החלון */
+  background-repeat: no-repeat; /* אין חזרה של התמונה ברקע */
+}
+
+/* עיצוב לאלמנט .masthead: */
+.masthead {
+  position: relative; /* מיקום יחסי במערך */
+  width: 100%; /* רוחב מקסימלי */
+  height: auto; /* גובה אוטומטי */
+  min-height: 35rem; /* גובה מינימלי */
+  padding: 15rem 0; /* מרווחים בחלק העליון של האלמנט */
+  background-position: center; /* מיקום הרקע במרכז */
+  background-repeat: no-repeat; /* אין חזרה של הרקע */
+  background-attachment: scroll; /* גרירת הרקע בגלילה */
+  background-size: cover; /* מתאים את תמונת הרקע לגודל האלמנט */
+}
+
+/* עיצוב לאלמנטי הכותרות ב dent .masthead: */
+.masthead h1,
+.masthead .h1 {
+  font-family: "Varela Round", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji"; /* שימוש בסוגי גופנים מסוימים */
+  font-size: 2.5rem; /* גודל הטקסט */
+  line-height: 2.5rem; /* גובה שורת הטקסט */
+  letter-spacing: 0.8rem; /* מרווח בין התווים בטקסט */
+  background: linear-gradient(rgba(255, 255, 255, 0.9), rgba(255, 255, 255, 0)); /* רקע בצורת גרדיאנט */
+  -webkit-text-fill-color: transparent; /* שימוש בטקסט שקוף */
+  -webkit-background-clip: text; /* יש ליישם את הגרדיאנט רק על הטקסט */
+  background-clip: text; /* יש ליישם את הגרדיאנט רק על הטקסט */
+}
+
+/* עיצוב לאלמנטי הכותרות במצב שמתקבל במסך ברוחב מינימלי של 768px: */
+@media (min-width: 768px) {
+  .masthead h1,
+  .masthead .h1 {
+      font-size: 4rem; /* גודל הטקסט */
+      line-height: 4rem; /* גובה שורת הטקסט */
+  }
+}
+
+/* עיצוב לאלמנטי הכותרות במצב שמתקבל במסך ברוחב מינימלי של 992px: */
+@media (min-width: 992px) {
+  .masthead {
+      height: 100vh; /* גובה מלא של המסך */
+      padding: 0; /* מסיר את הרווחים בחלק העליון של האלמנט */
+  }
+
+  .masthead h1,
+  .masthead .h1 {
+      font-size: 6.5rem; /* גודל הטקסט */
+      line-height: 6.5rem; /* גובה שורת הטקסט */
+      letter-spacing: 0.8rem; /* מרווח בין התווים בטקסט */
+  }
+
+  .masthead h2,
+  .masthead .h2 {
+      max-width: 30rem; /* רוחב מרבי */
+      font-size: 1.25rem; /* גודל הטקסט */
+  }
+}
+
+/* עיצוב לאלמנטים שיש להם מחלקת .text-white-50: */
+.text-white-50 {
+  font-family: Georgia, 'Times New Roman', Times, serif; /* שימוש בסוגי גופנים מסוימים */
+}
+
+/* עיצוב לאלמנט שיש לו ה-ID #navbarResponsive: */
+#navbarResponsive {
+  text-align: left; /* מיקום הטקסט משמאל */
+  margin-left: auto; /* מרכז את האלמנט לצד שמאל של העמוד */
+  width: 100%; /* רוחב מלא של האלמנט */
+  padding-left: 2px; /* מרווח משמאל */
+  margin-top: 0; /* אין מרווח למעלה */
+  margin-left: 1px; /* מרווח משמאל */
+}
+
+/* עיצוב לתיבות טקסט עם המחלקה .form-control: */
+.form-control {
+  background: transparent; /* רקע שקוף */
+  height: 50px; /* גובה קבוע של 50 פיקסלים */
+  border: 1px solid transparent; /* גבולות אפשריים סביב התיבה */
+  background: rgba(255, 255, 255, 0.08); /* רקע בעומק השקיפות */
+  border-radius: 40px; /* רקע בצורת מעגלים בפינות */
+  padding-left: 20px; /* מרווח בצד שמאל של התיבה */
+  padding-right: 20px; /* מרווח בצד ימין של התיבה */
+  -webkit-transition: 0.3s; /* אנימציה עבור הדפסה בדפדפן Safari */
+  -o-transition: 0.3s; /* אנימציה עבור הדפסה בדפדפן Opera */
+  margin: 0px auto; /* מרכז את התיבה באופן אופטימלי */
+  position: relative; /* מיקום יחסי במערך */
+  margin-top: -8px; /* מרווח למעלה של התיבה (להסתיר חלק מהטקסט) */
+  text-align: center; /* מרכז את הטקסט בתוך התיבה */
+  width: 100%; /* רוחב מלא של התיבה */
+  transition: box-shadow 100ms; /* אנימציה של הצגת קשת הצל מהירה */
+}
+
+/* עיצוב לאלמנט שיש לו מחלקה .form-group: */
+.form-group {
+  display: flex; /* שימוש ב-Flexbox */
+  align-items: center; /* מרכז את התמונה אנכית יחד עם הטקסט של הסיסמה */
+  position: relative; /* מיקום יחסי במערך */
+  margin-bottom: 20px; /* מרווח תחתון של 20 פיקסלים בין כל .form-group */
+}
+
+/* עיצוב לאלמנט שיש לו ה-ID #toggle-password: */
+#toggle-password {
+  width: 28px; /* רוחב קבוע של 28 פיקסלים */
+  position: absolute; /* מיקום יחסי במערך */
+  right: 23px; /* מרווח לצד ימין של התיבה */
+  cursor: pointer; /* שינוי הסמן לסמן מצביע */
+  transition: transform 0.2s ease; /* אנימציה של שינוי צורת הסמן */
+}
+
+/* עיצוב לאלמנט שיש לו ה-ID #i: */
+#i {
+  width: 24px; /* רוחב קבוע של 24 פיקסלים */
+  position: absolute; /* מיקום יחסי במערך */
+  right: 30px; /* מרווח לצד ימין של התיבה */
+  cursor: pointer; /* שינוי הסמן לסמן מצביע */
+  transition: transform 0.2s ease; /* אנימציה של שינוי צורת הסמן */
+}
+
+/* עיצוב לאלמנט שיש לו מחלקה .sex ואלמנטים מסוג option: */
+#sex option {
+  color: black; /* שינוי צבע הטקסט לשחור */
+}
+
+/* עיצוב לאלמנט שיש לו ה-ID #mainNav: */
+#mainNav {
+  min-height: 3rem; /* גובה מינימלי של 3 רמות */
+  background-color: rgba(254, 254, 255, 0.3); /* רקע בגוון לבן עם שקיפות של 30% */
+  opacity: inherit; /* שמירה על שקיפות בתוך #mainNav */
+}
+
+/* עיצוב ללינקים בתפריט הניווט כאשר יש להם מחלקה .nav-link: */
+.nav-item a.nav-link {
+  color: white; /* צבע הטקסט של הלינקים בלבן */
+}
+
+/* עיצוב לתפריט הניווט בתפריט הראשי: */
+.navbar-nav {
+  display: flex; /* שימוש ב-Flexbox */
+  flex-direction: row; /* כיוון הרצפים - אופקי */
+  list-style: none; /* הסתרת הרשימה */
+  margin: 0; /* מסיר את השוליים שברירת המחדל של הרשימה */
+  padding: 0; /* מסיר את הריפודים שברירת המחדל של הרשימה */
+}
+
+/* עיצוב לפריטי הניווט: */
+.nav-item {
+  margin-right: 15px; /* מרווח בין הפריטים */
+  font-weight: bold; /* הוספת משקל לטקסט (מודגש) */
+}
+
+/* עיצוב לפריט הניווט האחרון: */
+.nav-item:last-child {
+  margin-right: 0; /* אין מרווח בין הפריט האחרון לפריטים הקודמים */
+}
+
+/* עיצוב לתיבות הטקסט שיש להם מחלקה .form-control: */
+.form-control {
+  background-color: #ffffff; /* רקע לבן */
+  /* יתרונות נוספים, לדוגמה: */
+  border: 1px solid #cccccc; /* גבולות אפשריים סביב התיבה */
+  border-radius: 8px; /* מעגלים את הפינות */
+  color: #000000; /* צבע הטקסט בתוך התיבה */
+}
+
+/* עיצוב לתיבת הטקסט הכפתור המסוגלת להגיב ללחיצה: */
+.form-control.btn.submit {
+  font-size: 16px; /* גודל גופן קטן יותר */
+  padding: 10px 20px; /* מרווחים פנימיים */
+  background-color: #0074e4; /* רקע בצבע כחול */
+  color: #ffffff; /* צבע הטקסט בכפתור */
+  border: none; /* אין גבולות */
+  border-radius: 8px; /* מעגל את הפינות */
+  cursor: pointer; /* משנה את הסמן לסמן מצביע */
+  width: 175px; /* רוחב קבוע של 175 פיקסלים */
+  transition: background-color 0.3s, transform 0.2s; /* אנימציה קלה */
+}
+
+/* עיצוב לתיבת הטקסט הכפתור המסוגלת להגיב לעברת העכבר: */
+.form-control.btn.submit:hover {
+  background-color: #0051a8; /* צבע רקע משתנה כאשר מעבירים את העכבר מעליו */
+  transform: scale(1.05); /* משנה את הגודל בעת לחיצה */
+}
+
+/* עיצוב לאלמנט שיש לו ה-ID #signup: */
+#signup select {
+  width: 100%; /* רוחב מלא של התיבה */
+  padding: 10px; /* מרווחים פנימיים */
+  margin-bottom: 15px; /* מרווח למטה של התיבה */
+}
+
+/* הוספת מרווח בין ה-labels לתיבות הטקסט: */
+#signup label {
+  margin-bottom: 30px; /* מרווח למטה של התיבות */
+  margin-left: 20px; /* מרווח לשמאל של התיבות */
+  margin-right: 30px; /* מרווח לימין של התיבות */
+}
+
+/* הוספת מרווח בין ה-submit button לתיבות הטקסט: */
+#signup button.submit {
+  margin-top: 30px; /* מרווח למעלה של התיבה */
+  width: 200px; /* רוחב קבוע של 200 פיקסלים */
+  height: 50px; /* גובה קבוע של 50 פיקסלים */
+}
+
+/* עיצוב לאלמנט שיש לו מחלקה .custom-select: */
+.custom-select {
+  width: 80px; /* רוחב קבוע של 80 פיקסלים */
+  height: 48px; /* גובה קבוע של 48 פיקסלים */
+}
+
+/* עיצוב לאלמנט שיש לו ה-ID #email: */
+#email {
+  width: 280px; /* רוחב קבוע של 280 פיקסלים */
+  height: 48px; /* גובה קבוע של 48 פיקסלים */
+}
+
+/* עיצוב לטקסט הרקע (placeholder) בתיבות הטקסט: */
+.form-control::placeholder {
+  color: #000000; /* צבע שחור     */
+}
