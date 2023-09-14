@@ -7,12 +7,8 @@ const messageSchema = new mongoose.Schema({
     },
     time: { type: Date, default: Date.now },
     originalText: String,
-    containsTickerSymbol: {
-        type: Boolean, default: false
-    },
     tickerInfo: {
         type: String, default: null,
-        date: { type: Date, default: null },
     },
     mediaRef: String
 

@@ -10,7 +10,6 @@ function createPrivateChat(user1Id, user2Id) {
 }
 
 function getPrivateChatMessages(privateChatId, paginationOptions) {
-    //for each massage if containsTickerSymbol=true update the tickerInfo to current info using tickerInfo.service.js
     // PaginationOptions =  how many messages to return and from which index
     return null;
 }

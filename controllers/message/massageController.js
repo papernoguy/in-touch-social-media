@@ -5,7 +5,8 @@ const User = require('../../models/user');
 
 const { validateMessageData } = require('../../services/validator'); // Import the validation middleware
 function createMessage(messageData) {
-    // This might involve creating a new instance of your message model and saving it to your database.
+    // if the massage contains ticker symbol like "$AAPL" call tickerInfoService to get the ticker info and substring it to the message:
+    // example: "Hello World! $AAPL" -> "Hello World! $AAPL, Ticker: $AAPL, Price: 123.45, Change: +1.23"
     return null;
 }
 
