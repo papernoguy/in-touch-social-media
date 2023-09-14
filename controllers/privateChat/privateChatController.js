@@ -1,8 +1,3 @@
-// createPrivateChat(): users
-// getPrivateChatMessages(): Get messages from a private chat with pagination
-// sendPrivateChatMessage(): create a message and add it to the private chat messages list
-// deletePrivateChatMessage(): delete a message and remove it from the private chat messages list (by the message author only)
-
 // privateChat.controller.js
 const PrivateChat = require('../../models/privateChat');
 const Message = require('../../models/message');
@@ -15,8 +10,8 @@ function createPrivateChat(user1Id, user2Id) {
 }
 
 function getPrivateChatMessages(privateChatId, paginationOptions) {
-    // Retrieve messages from a private chat with the provided ID, with pagination.
-    // PaginationOptions might include details about which page of results to retrieve and how many results per page.
+    //for each massage if containsTickerSymbol=true update the tickerInfo to current info using tickerInfo.service.js
+    // PaginationOptions =  how many messages to return and from which index
     return null;
 }
 

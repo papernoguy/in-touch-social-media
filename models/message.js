@@ -6,8 +6,16 @@ const messageSchema = new mongoose.Schema({
         ref: 'User'
     },
     time: { type: Date, default: Date.now },
-    text: String,
+    originalText: String,
+    containsTickerSymbol: {
+        type: Boolean, default: false
+    },
+    tickerInfo: {
+        type: String, default: null,
+        date: { type: Date, default: null },
+    },
     mediaRef: String
+
 });
 
 const Message = mongoose.model('Message', messageSchema);
