@@ -45,9 +45,9 @@ const UserSchema = new mongoose.Schema({
             type: mongoose.Schema.Types.ObjectId,
             ref: 'User',
         }],
-        pendingJoinRequests: [{
+        pendingFriendRequests: [{
             type: mongoose.Schema.Types.ObjectId,
-            ref: 'Community',
+            ref: 'User',
         }],
         receivedFriendRequests: [{
             type: mongoose.Schema.Types.ObjectId,
