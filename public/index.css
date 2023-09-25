@@ -1,0 +1,445 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Lato";
+  }
+  body {
+    font-family: 'Roboto', sans-serif;
+  }
+
+  /* header section*/
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 60px;
+    padding: 15px;
+  }
+  main {
+    height: calc(100vh - 70px);
+    display: flex;
+    background-color: #f9f9f9;
+    
+  }
+  /* Sidebar */ 
+.side-bar {
+    height: 100%;
+    width: 17%;
+    background-color: white;
+    overflow-y: hidden;
+
+  } 
+
+  .left {
+    display: flex;
+    align-items: center;
+   }
+   
+
+i .header{
+    color: rgb(62, 27, 216);
+    padding: 0 7px;
+    height: 150px;
+    width: 150px;
+    cursor: pointer;
+    
+
+}
+.container-fluid{
+  width: 100%;
+  padding-right: 0.75rem;
+  padding-left: 0.75rem;
+  margin-right: auto;
+  margin-left: auto;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  padding-right: 0;
+  padding-left: 0;
+  flex-wrap: nowrap;
+}
+   
+
+  .material-icons {
+
+    padding: 0 7px;
+    cursor: pointer;
+    font-size: 20px; 
+    color:blue;
+    font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif
+  }
+  .nav {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 15px;
+    margin-top: 15px;
+    list-style: none;
+  }
+  .nav-link {
+    display: flex;
+    align-items: center;
+    padding: 12px 25px;
+    text-decoration: none;
+
+    padding: 10px 0;
+    display: block;
+    
+  }
+  
+  .nav-link li {
+    float: left;
+  }
+ .nav-link span {
+    margin-left: 15px;
+  }
+  
+
+
+
+ .icons.right .material-icons {
+    font-size: 25px; /* גודל האייקון שאתה רוצה */
+    float: right; /* מעביר את האייקון לצד ימין של המסך */
+    margin-left: 10px; /* מרווח בין האייקונים (לא חובה, אפשר לשנות את הערך לפי הצורך) */
+  }
+  .icons.right .project {
+    font-size: 25px; /* גודל האייקון שאתה רוצה */
+    float:left; /* מעביר את האייקון לצד ימין של המסך */
+    margin-left: 20px; /* מרווח בין האייקונים (לא חובה, אפשר לשנות את הערך לפי הצורך) */
+    font-size: 24px; /* גודל הגופן */
+    font-weight: bold; /* מחליט שהטקסט יהיה מודגש */
+    -moz-osx-font-smoothing: grayscale;
+    -webkit-font-smoothing: antialiased;
+    font-family: "Cambo", "Times New Roman", serif;
+    color: #f9f9f9;
+    
+  }
+  
+  .page {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    flex-wrap: wrap;
+  }
+  
+  .page {
+    width: 270px;
+    margin-bottom: 30px;
+  }
+
+ 
+
+  .side-bar {
+    width: 20%; /* רוחב התפריט בצד השמאלי */
+    float: left; /* יישום לצד השמאלי של המסך */
+    background-color: #333;
+    color: white;
+    padding: 20px;
+    
+  }
+  
+
+  
+ 
+  
+/* סגנון מותאם */
+.tab-input {
+    display: none;
+  }
+  
+
+  
+  .nav-link::after {
+    content: '';
+    display: block;
+    border-bottom: 2px solid transparent;
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    transition: border-color 0.3s;
+  }
+  
+
+
+
+  
+  .hidden-menu {
+    display: none; /* הסתרת התפריט ברגע שהדף נטען */
+    position: absolute;
+    top: 70px; /* המרחק מלמעלה של התפריט (ניתן לשנות לפי הצורך) */
+    right: 0; /* התפריט יופיע בצד ימין של האייקון */
+    background-color:darkblue;
+    padding: 5px; /* מרווח פנימי בתפריט */
+    z-index: 1; /* כדי שהתפריט יופיע מעל תוכן אחר בדף */
+    width: 100px;
+    height: 40px;
+    border-radius: 20px;
+    font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+
+  }
+  
+  #logout-option {
+    color: #ffffff;
+    text-decoration: none;
+    text-align: center;
+    display: block;
+    margin: 5px 0;
+  }
+
+
+
+
+  .serch_box {
+    width: 580px;
+    margin: 0px auto;
+    position: relative;
+    margin-top: -8px;
+    text-align: center;
+  }
+  
+  .serch_box .search-input {
+    display: block;
+    border: 1px solid #ddd;
+    color: rgba(0, 0, 0, 0.87);
+    font-size: 16px;
+    padding: 13px;
+    padding-left: 45px;
+    border-radius: 25px;
+    width: 100%;
+    transition: box-shadow 100ms;
+    outline: none;
+  }
+  
+  .serch_box i {
+    width: 20px;
+    top: 13px;
+    left: 14px;
+    position: absolute;
+
+  }
+
+  
+
+  
+  .search_button {
+    border: 1px solid transparent;
+    padding: 9px 15px;
+    color: #666;
+    font-size: 14px;
+    border-radius: 4px;
+    background-color: #ddd;
+    display: inline-block;
+    margin-right: 10px;
+    margin-top: 28px;
+    outline: none;
+    cursor: pointer;
+    transition: border-color 100ms;
+  }
+  
+  .search_button:hover {
+  
+    opacity: .5;
+  }
+
+
+  .left-menu a{
+    border-width: 0px !important;
+}
+@media (max-width: 768px) {
+  .side-bar {
+    display: none;
+  }
+}
+.b{
+  background-color: #333;
+  color: #333;
+  padding: 15px;
+  
+}
+.list-group-item.active {
+
+    color: blue;
+    text-decoration: underline;
+}
+a{
+  text-decoration: none;
+  color: white;
+
+}
+
+
+/*    \\homepagefeed */
+.container {
+  max-width: 1000px;
+  padding: 0 2%;
+  margin: 0 auto;
+}
+
+.profile-description {
+  margin-top: 20px;
+}
+
+.img-profile-wraper {
+  float: left;
+  width: 50%;
+  padding: 0 50px;
+}
+
+.img-profile {
+  background-size: 100% 100%;
+  width: 50%;
+  padding-top: 50%;
+  background-repeat: no-repeat;
+  border-radius: 50%;
+  border: 3px solid #ccc;
+}
+
+.profile-text {
+  float: left;
+  width: 50%;
+}
+
+.profile-name span {
+  font-weight: 300;
+  font-size: 24px;
+}
+
+.profile-name a:nth-of-type(1) {
+  text-decoration: none;
+  color: #000;
+  border: 1px solid #ccc;
+  padding: 4px 10px;
+  margin: 0 8px;
+}
+
+.profile-info p {
+  display: inline-block;
+  margin-right: 10px;
+}
+
+.profile-description h3 {
+  font-size: 18px;
+}
+
+.profile-description p {
+  font-weight: 300;
+  font-size: 16px;
+  margin-top: 8px;
+}
+
+.feed {
+  padding: 60px 0;
+}
+
+.line-feed {
+  border-top: 1px solid #ccc;
+  text-align: center;
+}
+
+.single-line-name {
+  display: inline-block;
+  margin: 10px 10px;
+  text-transform: uppercase;
+  font-size: 18px;
+  font-weight: 500;
+  cursor: pointer;
+  position: relative;
+  font-weight:bold; 
+}
+
+.line-mark {
+  display: none;
+  position:absolute;
+  width: 57px;
+  height: 1px;
+  background-color: #551cda;
+  text-align:center;
+  top: -10px;
+}
+.line-markcom {
+  display: none;
+  position:absolute;
+  width: 118px;
+  height: 1px;
+  background-color: #551cda;
+  text-align:center;
+  top: -10px;
+}
+.line-FRIENDF {
+  display: none;
+  position:absolute;
+  width: 80px;
+  height: 1px;
+  background-color: #551cda;
+  text-align:center;
+  top: -10px;
+}
+
+
+.publish-single {
+  float: left;
+  width: 33.3%;
+  padding-top: 33.3%;
+  background-size: 100% 100%;
+  border: 4px solid #fff;
+}
+
+#communities {
+  display: none;
+  font-weight:bold;
+}
+#publish{
+  font-weight:bold; 
+}
+#friends{
+  display: none;
+  font-weight:bold;
+}
+.center-search {
+  margin-top: 40px;
+text-align: center;
+}
+
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 20px;
+  border-collapse: separate;
+  border-spacing: 10px;
+
+
+
+}
+
+/* סגנון עבור כותרות העמודות */
+th {
+  background-color: #007bff; /* צבע רקע */
+  color: white;
+  padding: 10px;
+
+}
+
+/* סגנון עבור שורות הטבלה */
+td {
+  border: 1px solid #ddd; /* גבולות */
+  padding: 8px;
+  text-align: left;
+
+}
+
+/* סגנון עבור אפשרות זוגית (לאורך כל הטבלה) */
+tr:nth-child(even) {
+  background-color: #f2f2f2;
+}
+h1{
+  text-align: center;
+}
+
+
+.search_button {
+  color:#ffffff;
+background-color: #007bff;
+}
