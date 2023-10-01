@@ -265,3 +265,18 @@ body {
 .form-control::placeholder {
   color: #000000; /* צבע שחור     */
 }
+
+.formgroup {
+  margin-bottom: 50px; /* הוספת מרווח בין ה-DIV הראשון ל-DIV השני */
+}
+
+/* סגנון ל DIV השני */
+.information-text {
+  margin-top: 50px; /* הוספת מרווח בין ה-DIV השני ל-DIV הראשון */
+}
+.downpage {
+  margin-top: 30px; /* הוספת מרווח בין ה-DIV השני ל-DIV הראשון */
+}
+a{
+color: white;
+}
