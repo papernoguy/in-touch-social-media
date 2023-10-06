@@ -1,7 +1,8 @@
 const User = require('../../models/user');
 
-function createUser(userData) {
-    // Add a new user.
+// Create a new user.
+function createUser(req, res) {
+
 }
 
 function searchUserById(userId) {

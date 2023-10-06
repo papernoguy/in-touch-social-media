@@ -17,7 +17,8 @@ const UserSchema = new mongoose.Schema({
     },
     profilePictureRef: {
         type: String,
-        default: '/path/to/default/image.jpg'
+        default: '/path/to/default/image.jpg',
+
     },
     address: {
         type: String,
@@ -68,6 +69,6 @@ const UserSchema = new mongoose.Schema({
     }]
 });
 
-// Create the User model
+
 const User = mongoose.model('User', UserSchema);
 module.exports = User;
