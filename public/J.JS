@@ -13,33 +13,33 @@ document.addEventListener('click', function (event) {
   }
 });
 
-// JavaScript לפעולת LOGOUT
-logoutOption.addEventListener('click', function () {
-  // הוסיפי כאן את הפעולות שמתבצעות בעת ההתנתקות, לדוגמה, אפילו אפשר לשלוח בקשת POST לשרת
-  alert('You have logged out.');
-});
+// // JavaScript לפעולת LOGOUT
+// logoutOption.addEventListener('click', function () {
+//   // הוסיפי כאן את הפעולות שמתבצעות בעת ההתנתקות, לדוגמה, אפילו אפשר לשלוח בקשת POST לשרת
+//   alert('You have logged out.');
+// });
 
 
-// מאזינים ללחיצה על האייקון שמיועד לפתיחת הגלריה
-document.getElementById('open-gallery').addEventListener('click', function () {
-    // הפעלת ה-input
-    const input = document.getElementById('image-input');
-    input.style.display = 'block';
+// // מאזינים ללחיצה על האייקון שמיועד לפתיחת הגלריה
+// document.getElementById('open-gallery').addEventListener('click', function () {
+//     // הפעלת ה-input
+//     const input = document.getElementById('image-input');
+//     input.style.display = 'block';
   
-    // מאזינים לשינוי ב-input (שבו יהיה הקובץ שהמשתמש בחר)
-    input.addEventListener('change', function () {
-      const selectedImage = input.files[0]; // הקובץ שנבחר
-      // בצעי פעולות נדרשות, לדוגמה שמירה במסד נתונים ועדכון התצוגה בדף
-      console.log('Selected image:', selectedImage);
+//     // מאזינים לשינוי ב-input (שבו יהיה הקובץ שהמשתמש בחר)
+//     input.addEventListener('change', function () {
+//       const selectedImage = input.files[0]; // הקובץ שנבחר
+//       // בצעי פעולות נדרשות, לדוגמה שמירה במסד נתונים ועדכון התצוגה בדף
+//       console.log('Selected image:', selectedImage);
 
 
 
-      const displayImage = document.getElementById('selected-image');
-      displayImage.src = URL.createObjectURL(selectedImage);
+//       const displayImage = document.getElementById('selected-image');
+//       displayImage.src = URL.createObjectURL(selectedImage);
 
 
-    });
-  });
+//     });
+//   });
   
 
 
