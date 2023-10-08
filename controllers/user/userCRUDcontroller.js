@@ -2,7 +2,7 @@ const User = require("../../models/user");
 const bcrypt = require("bcrypt");
 const express = require("express");
 const { validationResult } = require("express-validator");
-
+const flash = require('connect-flash');
 const app = express();
 
 // Create a new user.
@@ -10,7 +10,8 @@ function createUser(req, res) {
   const errors = validationResult(req);
   console.log(errors);
   if (!errors.isEmpty()) {
-    return res.status(400).redirect('../#signup').flash('errors', errors.array());
+    req.flash('singUpErrorMessage', errors.array()[0].msg);
+    return res.status(422).redirect('../#signup')
   }
   const email = req.body.email;
   const userName = req.body.Username;
@@ -21,7 +22,13 @@ function createUser(req, res) {
     ],
   }).then((userDoc) => {
     if (userDoc) {
-      return res.redirect("../#signup");
+      if (userDoc.email == email){
+        req.flash('singUpErrorMessage', "Email is already in use");
+      }
+      else{
+        req.flash('singUpErrorMessage', "UserName is already in use");
+      }
+      return res.status(422).redirect('../#signup')
     } else {
       return bcrypt.hash(req.body.password, 12).then((hashedPassword) => {
         const user = new User({

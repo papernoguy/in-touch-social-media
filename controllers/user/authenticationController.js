@@ -1,5 +1,6 @@
 const User = require("../../models/user");
 const bcrypt = require("bcrypt");
+const { validationResult } = require("express-validator");
 
 function loginForm(req, res) {
   res.render("login", {});
@@ -7,9 +8,15 @@ function loginForm(req, res) {
 function loginUser(req, res) {
   const userName = req.body.userName;
   const password = req.body.Password;
+  const errors = validationResult(req);
+  if (!errors.isEmpty()) {
+    req.flash('logInErrorMessage', errors.array()[0].msg);
+    return res.status(422).redirect('../#login')
+  }
   User.findOne({ username: userName }).then((user) => {
     if (!user) {
-      return res.redirect("/auth?error=1");
+      req.flash('logInErrorMessage', "UserName or password invalid");
+      return res.status(422).redirect('../#login')
     }
     bcrypt
       .compare(password, user.passwordHash)
@@ -21,7 +28,9 @@ function loginUser(req, res) {
             return res.redirect("/home");
           });
         }
-        res.redirect("/auth?error=1");
+        req.flash('logInErrorMessage', "UserName or password invalid");
+      
+        return res.status(422).redirect('../#login')
       })
       .catch((err) => {
         console.log(err);

@@ -1,10 +1,19 @@
 var express = require("express");
 const isAuth = require("../middleware/is-auth");
 var router = express.Router();
+const flash = require("connect-flash");
+
 const userAuthController = require("../controllers/user/authenticationController");
+const { render } = require("ejs");
 /* GET home page. */
 router.get("/", function (req, res, next) {
-  res.render("index", { title: "Express" });
+  const singUpErrorMessage = req.flash("singUpErrorMessage");
+  const logInErrorMessage = req.flash("logInErrorMessage");
+  res.render("index", {
+    title: "Express",
+    singUpErrorMessage: singUpErrorMessage || "",
+    logInErrorMessage: logInErrorMessage || "",
+  });
 });
 router.get(
   "/home",
@@ -12,5 +21,9 @@ router.get(
   userAuthController.isLoggedIn,
   userAuthController.foo
 );
+
+router.get("/privatecaht", function (req, res, next) {
+  res.render("privatechat", { username: req.session.username });
+});
 
 module.exports = router;
