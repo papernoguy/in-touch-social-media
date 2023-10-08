@@ -23,7 +23,7 @@
                     <i class="material-icons bi bi-three-dots-vertical " id="menu-icon"></i>
                     <!-- תפריט מוסתר עם אופציה ליצוא (LOGOUT) -->
                     <div class="hidden-menu" id="menu">
-                        <a href="#" id="logout-option">Log Out</a>
+                        <a href="/auth/logout" id="logout-option">Log Out</a>
                     </div>
                     
                    <i class="material-icons display-this bi bi-person-circle "></i>
@@ -57,8 +57,8 @@
         <main class="row g-5 ">
             <div class="col-1 left-menu d-none d-md-block side-bar ">
                 <ul >
-                    <li class="list-group-item nav-link material-icons bi bi-house active "><a  href="home.html">  Home</a> </li>
-                    <li class="list-group-item nav-link material-icons bi bi-chat-square-text-fill  "><a href="priveatchat.html">  Private Chat</a></li>
+                    <li class="list-group-item nav-link material-icons bi bi-house active "><a  href="/home">  Home</a> </li>
+                    <li class="list-group-item nav-link material-icons bi bi-chat-square-text-fill  "><a href="/privatechat">  Private Chat</a></li>
                     <li class="list-group-item nav-link material-icons bi bi-globe2  "><a href="group.html">  Community</a> </li>
                     <li class="list-group-item nav-link material-icons bi-reception-3  "><a href="mannger.html">  management tools</a> </li>
                  
@@ -78,7 +78,7 @@
                       <!--img-profile-wraper-->
                       <div class="profile-text">
                         <div class="profile-name">
-                          <span>username</span>
+                          <span><%= username %></span>
                           <a href="/#">Edit</a>
                           <a href="/#"><i class="fas fa-cogs"></i></a>
                         </div>

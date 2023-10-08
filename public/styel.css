@@ -280,3 +280,22 @@ body {
 a{
 color: white;
 }
+
+/* CSS for the toast container */
+.toast-container {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  z-index: 1000;
+}
+
+/* CSS for individual toast messages */
+.toast {
+  background-color: #ff3333;
+  color: #fff;
+  padding: 10px 20px;
+  border-radius: 4px;
+  margin-bottom: 10px;
+  opacity: 0;
+  transition: opacity 0.3s ease-in-out;
+}
