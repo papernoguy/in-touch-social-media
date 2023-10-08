@@ -22,7 +22,7 @@ router.get(
   userAuthController.foo
 );
 
-router.get("/privatecaht", function (req, res, next) {
+router.get("/privatechat", function (req, res, next) {
   res.render("privatechat", { username: req.session.username });
 });
 
