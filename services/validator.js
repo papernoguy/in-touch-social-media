@@ -4,6 +4,24 @@ const Comment = require('../models/comment');
 const Chat = require('../models/privateChat');
 const Community = require('../models/community');
 
+
+const { validationResult } = require("express-validator");
+
+function validateCommunityCreation(req) {
+    if (!req.body.name || typeof req.body.name !== 'string') {
+        throw new Error('Name is required and should be a string');
+    }
+    if (!req.body.bio || typeof req.body.bio !== 'string') {
+        throw new Error('Bio is required and should be a string');
+    }
+    if (!req.body.photoRef || typeof req.body.photoRef !== 'string') {
+        throw new Error('PhotoRef is required and should be a string');
+    }
+    // Add more validations as needed
+}
+
+
+
 function validateMessageData(req, res, next) {
 }
 function validateUserCreation(req, res, next) {
@@ -31,10 +49,6 @@ function validatePrivateChatMessage(req, res, next) {
 }
 
 function validateFriendRequest(req, res, next) {
-    return null;
-}
-
-function validateCommunityCreation(req, res, next) {
     return null;
 }
 
