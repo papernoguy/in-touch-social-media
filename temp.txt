@@ -1,0 +1,62 @@
+http://localhost:3000/community/createCommunity
+{
+  "name": "New Community",
+  "bio": "This is a new community.",
+  "photoRef": "path/to/photo",
+  "privacySettings": {
+    "approvalPolicy": "admin-approval",
+    "visibility": "visible"
+  }
+}
+
+
+http://localhost:3000/autho/login
+{
+  "userName": "guy",
+  "Password": "123456"
+}
+
+
+
+// Validation
+    const errors = validationResult(req);
+    if (!errors.isEmpty()) {
+        req.flash('createCommunityErrorMessage', errors.array()[0].msg);
+        //return res.status(422).redirect('../#createCommunity'); //
+    }
+
+    const name = req.body.name;
+    const bio = req.body.bio;
+    const photoRef = req.body.photoRef;
+
+    // Create a new community
+    const community = new Community({
+        name,
+        bio,
+        photoRef,
+        members: {
+            adminsList: [req.session.userId], // assuming the user ID is stored in req.session.userId
+            membersList: [],
+            pendingJoinRequests: [],
+            blockedUsers: []
+        },
+        chatRooms: []
+    });
+
+    // Save the community
+    community.save()
+        .then(() => {
+            //res.redirect("../#communityList"); // Redirect to where you list communities
+        })
+        .catch(err => {
+            console.log(err);
+            req.flash('createCommunityErrorMessage', 'Something went wrong');
+            //res.status(500).redirect('../#createCommunity');
+        });
+
+
+
+
+
+
+

@@ -23,6 +23,7 @@ function loginUser(req, res) {
       .then((result) => {
         if (result) {
           req.session.username = userName;
+          req.session.userId = user._id;
           req.session.isLoggedIn = true;
           return req.session.save((err) => {
             return res.redirect("/home");

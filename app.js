@@ -6,9 +6,14 @@ const logger = require("morgan");
 const indexRouter = require("./routes/index");
 const usersRouter = require("./routes/users");
 const authRouter = require("./routes/auth");
+const userCommunityRouter = require("./routes/user/userCommunityRoutes");
 const session = require("express-session");
 const flash = require("connect-flash");
 const app = express();
+
+
+//app.use(errorHandler);
+// In your app.js
 
 app.use(
   session({
@@ -29,8 +34,13 @@ app.use(express.static(path.join(__dirname, "public")));
 app.use("/", indexRouter);
 app.use("/users", usersRouter);
 app.use("/auth", authRouter);
+app.use("/community", userCommunityRouter);
+app.use("/community", userCommunityRouter);
 
-module.exports = app;
+
+
+
+
 
 const { connectToDatabase, disconnectFromDatabase } = require("./config/db");
 
@@ -48,3 +58,8 @@ app.on("close", () => {
     console.log("Disconnected from the database.");
   });
 });
+
+
+
+
+module.exports = app;

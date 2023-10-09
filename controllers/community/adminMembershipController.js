@@ -9,7 +9,7 @@ function acceptCommunityJoinRequest(communityId, userId) {
 
 function rejectCommunityJoinRequest(communityId, userId) {
     // remove the user from the pendingJoinRequests of a community,
-    //and remove the community from the pendingJoinRequests of the user.
+    //and remove the community from the pendingJoinRequests of the user./
     return null;
 }
 function removeMember(communityId, userId) {
