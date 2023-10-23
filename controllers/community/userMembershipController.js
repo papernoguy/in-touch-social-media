@@ -1,31 +1,64 @@
 const User = require('../../models/user');
 const Community = require('../../models/community');
 
-function sendCommunityJoinRequest(communityId, userId) {
-    // add the user the pendingJoinRequests of a community, and add the community to the pendingJoinRequests of the user.
-    return null;
+function sendCommunityJoinRequest(req, res) {
+    // it can be auto-approval//
+    const userId = req.session.userId;
+    const communityId = req.body.communityId || req.params.communityId;
+    Community.findById(communityId).then(community => {
+        community.members.pendingJoinRequests.push(userId);
+        community.save().then(() => {
+            res.status(200).json(community);
+        });
+    })
 }
 
-function cancelCommunityJoinRequest(communityId, userId) {
-    // remove the user from the pendingJoinRequests of a community, and remove the community from the pendingJoinRequests of the user.
-    return null;
+function cancelCommunityJoinRequest(req, res) {
+    // remove the user from the pendingJoinRequests of a community
+    const userId = req.session.userId;
+    const communityId = req.body.communityId || req.params.communityId;
+    Community.findById(communityId).then(community => {
+        const index = community.members.pendingJoinRequests.indexOf(userId);
+        community.members.pendingJoinRequests.splice(index, 1);
+        community.save().then(() => {
+            res.status(200).json(community);
+        });
+    });
 }
 
-function removeFromJoinedCommunities(communityId, userId) {
-    // remove the community from the joinedCommunities of a user,
-    // and remove the user from the members list of the community.
-    return null;
+
+function leaveCommunity(req, res) {
+    const userId = req.session.userId;
+    const communityId = req.body.communityId || req.params.communityId;
+
+    // Find and update the community
+    Community.findById(communityId).then(community => {
+        const index = community.members.membersList.indexOf(userId);
+        if (index > -1) {
+            community.members.membersList.splice(index, 1);
+        }
+        community.save();
+    });
+
+    // Find and update the user
+    User.findById(userId).then(user => {
+        const joinedCommunities = user.joinedCommunities;
+        const communityIndex = joinedCommunities.findIndex(c => c.communityId.toString() === communityId);
+
+        if (communityIndex > -1) {
+            joinedCommunities.splice(communityIndex, 1);
+        }
+        user.save();
+    });
+    res.status(200).json({ message: 'Successfully left the community' });
 }
 
-//function getShareLink(communityId) {
-    // Generate a unique shareable link for a community's info page.
-//    return null;
-//}
+
 
 module.exports = {
     sendCommunityJoinRequest,
     cancelCommunityJoinRequest,
-    removeFromJoinedCommunities,
+    leaveCommunity,
 };
 
 

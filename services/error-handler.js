@@ -1,75 +1,12 @@
 const createError = require('http-errors');
 
-// General error handler
-const generalErrorHandler = (error, req, res) => {
-    return res.status(500).send('An error occurred');
-};
-const getAllChatRoomsByCommunityIdErrorHandler = (error, req, res) => {
-    // Log the error for internal review
-    console.log(error);
-
-    if (error.message === 'Community not found') {
-        res.status(404).send('Community not found');
-    } else {
-        res.status(500).send('An error occurred while fetching chat rooms');
-    }
-}
-
-const getCommunityByIdErrorHandler = (error, req, res) => {
-    // Log the error for internal review
-    console.log(error);
-
-    if (error.message === 'Community not found') {
-        res.status(404).send('Community not found');
-    } else {
-        res.status(500).send('An error occurred while fetching community');
-    }
-}
-
-// Specific error handler for createCommunity
-const createCommunityErrorHandler = (error, req, res) => {
-    console.error(error);  // Log the error for debugging
-
-    // Customize the response based on the error message if you'd like
-    switch (error.message) {
-        case 'Name is required and should be a string':
-            return res.status(400).json({ error: 'Name is required and should be a string.' });
-        case 'Bio is required and should be a string':
-            return res.status(400).json({ error: 'Bio is required and should be a string.' });
-        case 'PhotoRef is required and should be a string':
-            return res.status(400).json({ error: 'PhotoRef is required and should be a string.' });
-        default:
-            return res.status(500).json({ error: 'An unexpected error occurred.' });
-    }
-}; // OVERKILL
-
-
-// Specific error handler for getCommunitiesByCriteria
-const getCommunitiesByCriteriaErrorHandler = (error, req, res) => {
-    res.status(400).send('Error fetching communities');
+module.exports = (err, req, res, next) => {
+    console.log("to handle this error go to services/error-handler.js");
+    console.error(err.message); // Log error message
+    const statusCode = err.statusCode || 500;
+    res.status(statusCode).json({ message: err.message });
 };
 
-const errorHandlers = {
-    createCommunity: createCommunityErrorHandler,
-    getCommunitiesByCriteria: getCommunitiesByCriteriaErrorHandler,
-    // Add more as needed
-};
-
-// Function to select and apply the correct error handler
-const errorHandler = (operation, handlerName) => {
-
-    return async function (req, res) {
-        try {
-            await operation(req, res);
-        } catch (error) {
-            console.log(error);
-            const specificHandler = errorHandlers[handlerName] || generalErrorHandler;
-            specificHandler(error, req, res);
-        }
-    };
-};
-
-module.exports = errorHandler;
 
 
 
