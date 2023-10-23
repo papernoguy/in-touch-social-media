@@ -10,53 +10,36 @@ http://localhost:3000/community/createCommunity
 }
 
 
-http://localhost:3000/autho/login
+http://localhost:3000/auth/login
 {
-  "userName": "guy",
-  "Password": "123456"
+  "userName": "myuser",
+  "Password": "mypassword"
+}
+{
+  "userName": "myuser1",
+  "Password": "mypassword1"
+}
+
+
+http://localhost:3000/community/sendJoinRequest
+{
+    "communityId": "652fab406a91c1e973ec2f5d"
+}
+//
+http://localhost:3000/admin/addAdmin
+{
+  "communityId": "6523ea1df95123065169dca2",
+  "newAdminId": "6522817e6200c9cdc405f82e"
+}
+
+http://localhost:3000/admin/deleteCommunityById
+{
+    "communityId": "6523ea1df95123065169dca2"
 }
 
 
 
-// Validation
-    const errors = validationResult(req);
-    if (!errors.isEmpty()) {
-        req.flash('createCommunityErrorMessage', errors.array()[0].msg);
-        //return res.status(422).redirect('../#createCommunity'); //
-    }
-
-    const name = req.body.name;
-    const bio = req.body.bio;
-    const photoRef = req.body.photoRef;
-
-    // Create a new community
-    const community = new Community({
-        name,
-        bio,
-        photoRef,
-        members: {
-            adminsList: [req.session.userId], // assuming the user ID is stored in req.session.userId
-            membersList: [],
-            pendingJoinRequests: [],
-            blockedUsers: []
-        },
-        chatRooms: []
-    });
-
-    // Save the community
-    community.save()
-        .then(() => {
-            //res.redirect("../#communityList"); // Redirect to where you list communities
-        })
-        .catch(err => {
-            console.log(err);
-            req.flash('createCommunityErrorMessage', 'Something went wrong');
-            //res.status(500).redirect('../#createCommunity');
-        });
-
-
-
-
-
-
-
+http://localhost:3000/admin/resignAsAdmin
+{
+    "communityId": "6523ea1df95123065169dca2"
+}

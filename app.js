@@ -6,14 +6,16 @@ const logger = require("morgan");
 const indexRouter = require("./routes/index");
 const usersRouter = require("./routes/users");
 const authRouter = require("./routes/auth");
-const userCommunityRouter = require("./routes/user/userCommunityRoutes");
+const userCommunityRouter = require("./routes/userCommunityRoutes");
+const adminCommunityRouter = require("./routes/adminCommunityRoutes");
 const session = require("express-session");
 const flash = require("connect-flash");
+const authorization = require("./services/authorization");
+
+//const errorHandler = require("./services/error-handler");
 const app = express();
-
-
+app.use(express.json());
 //app.use(errorHandler);
-// In your app.js
 
 app.use(
   session({
@@ -31,11 +33,20 @@ app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, "public")));
 
+//public routes
 app.use("/", indexRouter);
 app.use("/users", usersRouter);
 app.use("/auth", authRouter);
+
+//session routes
+app.use('/community', authorization.isLoggedIn);
 app.use("/community", userCommunityRouter);
-app.use("/community", userCommunityRouter);
+
+//admin routes
+app.use('/admin', authorization.isLoggedIn);
+app.use('/admin', authorization.isAdmin);
+app.use("/admin", adminCommunityRouter);
+
 
 
 
@@ -58,8 +69,13 @@ app.on("close", () => {
     console.log("Disconnected from the database.");
   });
 });
+// Add the error-handling middleware
 
 
 
 
-module.exports = app;
+
+
+
+
+    module.exports = app;

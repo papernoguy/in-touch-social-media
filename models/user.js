@@ -28,8 +28,7 @@ const UserSchema = new mongoose.Schema({
         type: String,
         default: 'Hey there im using [app name]'
     },
-
-
+    
     //not necessary and maybe harmful
     joinedCommunities: [{
         communityId: {  //communities list with the date joined
