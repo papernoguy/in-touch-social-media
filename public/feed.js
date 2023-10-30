@@ -4,7 +4,7 @@ var tabsClick = function() {
   var tab = this.getAttribute("tab");
   var element = document.querySelector("#" + tab);
   disableStyle();
-  hideSection(["#publish", "#communities", "#friends"]);
+  hideSection(["#communities", "#friends"]);
   element.style.display = "block";
   this.children[0].style.display = "block";
 
