@@ -1,0 +1,501 @@
+.user{
+    display: flex;
+ 
+    
+  }
+  #LOGOO{
+height: 100px;
+  }
+.back{
+   background-color: rgb(53, 47, 47);
+   background: linear-gradient(to right, #a1c0d4, #4235f8); /* Adjust the color codes as needed */
+   box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+z-index: 1;
+  }
+  .user img {
+    margin-right: 100px; /* על מנת להוסיף מרווח בין התמונה לשם */
+  }
+
+  
+  .form-control1 {
+  
+  
+    text-align: center;
+    border: 1px solid #ffffff; /* צבע הגבול של התיבה */
+    border-radius: 0; /* רינדור פינות מרופדות */
+    box-shadow: none; /* הסרת הצללה על התיבה */
+    width: 300px;
+    align-items: center;
+  }
+  .form-control2 {
+  
+  
+    text-align: center;
+    border: 1px solid #ffffff; /* צבע הגבול של התיבה */
+    border-radius: 0; /* רינדור פינות מרופדות */
+    box-shadow: none; /* הסרת הצללה על התיבה */
+    width: 600px;
+    align-items: center;
+  }
+  .form-control{
+    align-items: center;
+     
+    text-align: center;
+    
+  }
+  .community {
+    
+    text-align: center;
+    padding: 20px;
+    display: flex;
+    justify-content: center; /* מרכז הקהילה לאמצע */
+  }
+  
+  .control {
+    background-color: #5199dd;
+    padding: 15px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    display: flex;
+    align-items: center; /* מרכז רוב האלמנטים לאמצע */
+    
+    text-align: center;
+  }
+  .rounded-circle {
+    border-radius: 50%; /* עיגול לתמונה העגלית */
+   
+  }
+  img{
+    height: 20px;
+    width: 20px;
+  }
+  .form-control1 {
+    border: 1px solid #3498db; /* צבע הגבול של התיבה */
+    border-radius: 5px; /* רינדור פינות מרופדות */
+    width: 450px;
+    margin-right: 10px; /* ריווח מימין בין התיבות */
+    
+    text-align: center;
+  }
+  
+  .form-control2 {
+    border: 1px solid #3498db; /* צבע הגבול של התיבה */
+    border-radius: 5px; /* רינדור פינות מרופדות */
+    box-shadow: none; /* הסרת הצללה על התיבה */
+    width: 450px;
+    
+    text-align: center;
+  }
+  
+  .community-section{
+    text-align: center;
+      display:inline;
+    
+  }
+  .community-card{
+      padding-top: 100px;
+  
+      text-align: center;
+  
+  }
+  
+
+  .community-image{
+      width: 45%;
+      height: 350px;
+      object-fit: cover;
+      border-radius: 10px;
+      margin-bottom: 10px;
+  }
+  
+  .community-overview{
+      margin: 13px 0 10px;
+      line-height: 30px;
+      width: 550px;
+          
+  
+      display:inline-block;
+  }
+  
+  .big_featured{
+    position: relative;
+    
+  }
+  .big_featured .big_img{
+    width: 100%;
+    height: 500px;
+    object-fit: cover;
+    filter: brightness(0.85);
+
+    background-repeat: no-repeat;
+  }
+
+  @media(max-width: 560px){
+    .big_featured .big_img{
+      height: 370px;
+    }
+    
+
+  }
+h2{
+  -webkit-text-stroke: 2px rgb(255, 255, 255);
+  line-height: 144px;
+  font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+  color: #ffffff;
+  font-size: 95px;
+
+}
+  .big_featured .featured_info{
+   
+    margin: 0 10% 2% 45%;
+    position: absolute;
+    bottom: 0;
+    text-shadow: 10px 10px 10px rgba(0, 0, 0, 0.5);
+  }
+  
+  @media only screen 
+    and (max-device-width: 667px) 
+    and (-webkit-min-device-pixel-ratio: 2) {
+      
+      .big_featured .featured_info{
+        padding: 0px 0px 30px 5px;
+        bottom: 0;
+      }
+  
+  }
+  
+  .big_featured .featured_info .title{
+    color: #fff;
+  }
+  .big_featured .featured_info .category_and_views .views span{
+    color: #fff;
+    background: rgba(0,0,0,0.6);
+    border-radius: 10px;
+    font-weight: bold;
+    font-size: 12px;
+    padding: 3px 5px 3px 5px;
+    display: inline;
+    text-align: center;
+    letter-spacing: 2px;
+  }
+  
+  .meta{
+    font-size: 15px;
+    color: #36363f;
+    margin-bottom: 5px;
+    margin-left: 1px;
+  }
+  .meta .author img{
+    width: 21px;
+    height: 21px;
+    border-radius: 50%;
+  }
+  
+
+  
+  
+  .big_featured .featured_info .category_and_views .views span{
+    color: #fff;
+    background: rgba(0,0,0,0.6);
+    border-radius: 10px;
+    font-weight: bold;
+    font-size: 12px;
+  
+    display: inline;
+
+   
+   
+   
+  
+  }
+
+ /* .rounded-circle {
+    border-radius: 50% ;
+  }*/ 
+  .user img {
+      border-radius: 50%;
+      width: 40px;
+      height: 40px;
+      margin-right: 10px;
+    }
+  
+    .user-info small {
+      color: #545d7a;
+    }
+    .post {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      text-align: center; /* Center the content horizontally */
+      
+   
+    }
+    
+    .post i{
+      
+      color: black;
+      margin: 3px 25px 10px;
+    }
+    .add-comment-section{
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      width: 550px;
+    }
+    .comments-section{
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding-top: 20px;
+    }
+    .comments{
+     width: 650px;
+     padding-top: 20px;
+    }
+  
+  .k{
+    display: flex;
+    align-items: center;
+    margin: 3px 0 10px;
+  }
+  
+  p{
+    text-align: left;
+  }
+     
+  span{
+    text-align: left;
+  }
+  
+  
+  .dropdown {
+    position: relative;
+    display: inline-block;
+  }
+  
+  .dropdown-icon {
+    font-size: 24px;
+    cursor: pointer;
+    color: black;
+  }
+  
+  /* סגנון התפריט הנפתח */
+  .dropdown-content {
+  
+    position: absolute;
+    
+    background-color: white;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+
+  
+  }
+  
+  /* סגנון קישורים בתפריט הנפתח */
+  .dropdown-content a {
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+  }
+  
+  /* סגנון קישורים בתפריט הנפתח בעת העברת העכבר עליהם */
+  .dropdown-content a:hover {
+    background-color: #ddd;
+  }
+  
+  /* הצגת התפריט בעת לחיצה על הסמל */
+  .show {
+    display: block;
+  }
+  
+  
+  .comments.show {
+    display: block;
+  }
+  
+  .row{
+    margin: 0px;
+  }
+  
+  
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  .user.back {
+  background-color: rgb(53, 47, 47);
+  padding: 20px; /* Add padding to create space between the content and the background */
+  border-radius: 10px; /* Add border-radius for rounded corners */
+  margin: 20px auto; /* Center the element horizontally with margin:auto */
+  max-width: 800px; /* Set a maximum width for the background */
+}
+
+.user img {
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  margin-right: 10px;
+}
+
+.user h5 {
+  color: white; /* Set text color to white */
+}
+
+.community-overview {
+  color: rgb(0, 0, 0); /* Set text color to white */
+  font-family:Georgia, 'Times New Roman', Times, serif;
+  font-size: 22px; /* גודל הפונט - יש להתאים לגודל הרצוי */
+  
+       
+}
+
+.post {
+  color: rgb(0, 0, 0); /* Set text color to white */
+}
+
+.post-title {
+  color: rgb(0, 0, 0); /* Set text color to white */
+  font-family:Georgia, 'Times New Roman', Times, serif;
+  font-size: 27px; /* גודל הפונט - יש להתאים לגודל הרצוי */
+  font-weight: bold;
+}
+
+.comments-section {
+  background-color: rgb(255, 255, 255);
+  padding: 20px;
+  border-radius: 10px;
+  margin-top: 20px;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.menuepost{
+  margin-left: auto;
+  font-size: 24px; /* Adjust the size to your preference */
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* הוספת אומברה לרקע של התחתית */
+.big_featured::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 17%; /* גובה האומברה, יש להתאים לפי הצורך */
+  background: linear-gradient(to bottom, rgba(255, 255, 255, 0), #ffffff);
+  pointer-events: none;
+}
+.addpost{
+  color: black;
+  font-size: 24px; /* גודל הסמל */
+  float: right;
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

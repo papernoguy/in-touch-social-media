@@ -1,0 +1,446 @@
+
+body{
+  background-color: rgb(53, 47, 47);
+  background: linear-gradient(to right, #a1c0d4, #4235f8); 
+}
+.NewPost{
+    z-index: 1;
+    margin-top: 150px;
+    
+
+}
+.add-post-section{
+    display: flex;
+    flex-direction: column;
+    width: 900px;
+    margin-left: 10px;
+    height: 50px;
+}
+.title-section{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-top: 20px;
+    
+  }
+  .rounded-circle {
+    border-radius: 50%; /* עיגול לתמונה העגלית */
+    height: 53px;
+    width: 53px;
+    margin-right: 10px;
+  }
+  .form-control{
+     
+    text-align: left; 
+    display: grid;
+  }
+  .add-text-section{
+    
+    width: 829px;
+    margin-left: 42px;
+    text-align: left; 
+}
+.text-section{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-top: 30px;
+  }
+  .godel{
+    height: 150px;
+    
+    max-height: 150px; /* Set a maximum height for the text box */
+    width: 100%;
+    width: 836px;
+    padding: 20px; /* Adjust padding to control spacing within the text box */
+    margin-left: 12px;
+    
+  }
+  button{
+    padding: 10px;
+    
+
+}
+.godel::placeholder {
+ 
+    top: 0;
+    left: 5px; /* Adjust the left position as needed */
+}
+
+
+
+
+
+
+
+
+
+
+
+
+/* General Styles */
+
+* {
+  box-sizing: border-box;
+}
+
+
+
+body {
+  margin: 0;
+  padding: 0;
+  color: rgb(0, 0, 0);
+  font-family: 'Poppins', sans-serif;
+  font-size: 1.125rem;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* End General Styles */
+
+
+
+
+.upload-area--open { /* Slid Down Animation */
+  animation: slidDown 500ms ease-in-out;
+}
+
+@keyframes slidDown {
+  from {
+    height: 28.125rem; /* 450px */
+  }
+
+  to {
+    height: 35rem; /* 560px */
+  }
+}
+
+
+
+.upload-area__title {
+  font-size: 1.8rem;
+  font-weight: 500;
+  margin-bottom: 0.3125rem;
+}
+
+.upload-area__paragraph {
+  font-size: 0.9375rem;
+  color: rgb(196, 195, 196);
+  margin-top: 0;
+}
+
+.upload-area__tooltip {
+  position: relative;
+  color: rgb(171, 202, 255);
+  cursor: pointer;
+  transition: color 300ms ease-in-out;
+}
+
+.upload-area__tooltip:hover {
+  color:rgb(63, 134, 255);
+}
+
+.upload-area__tooltip-data {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -125%);
+  min-width: max-content;
+  background-color:white;
+  color: rgb(63, 134, 255);
+  border: 1px solid rgb(171, 202, 255);
+  padding: 0.625rem 1.25rem;
+  font-weight: 500;
+  opacity: 0;
+  visibility: hidden;
+  transition: none 300ms ease-in-out;
+  transition-property: opacity, visibility;
+}
+
+.upload-area__tooltip:hover .upload-area__tooltip-data {
+  opacity: 1;
+  visibility: visible;
+}
+
+/* Drop Zoon */
+.upload-area__drop-zoon {
+  position: relative;
+  height: 11.25rem; /* 180px */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  border: 2px dashed rgb(171, 202, 255);
+  border-radius: 15px;
+  margin-top: 2.1875rem;
+  cursor: pointer;
+  transition: border-color 300ms ease-in-out;
+}
+
+.upload-area__drop-zoon:hover {
+  border-color: rgb(63, 134, 255);
+}
+
+.drop-zoon__icon {
+  display: flex;
+  font-size: 3.75rem;
+  color: rgb(63, 134, 255);
+  transition: opacity 300ms ease-in-out;
+}
+
+.drop-zoon__paragraph {
+  font-size: 0.9375rem;
+  color: rgb(171, 202, 255);
+  margin: 0;
+  margin-top: 0.625rem;
+  transition: opacity 300ms ease-in-out;
+}
+
+.drop-zoon:hover .drop-zoon__icon,
+.drop-zoon:hover .drop-zoon__paragraph {
+  opacity: 0.7;
+}
+
+.drop-zoon__loading-text {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  display: none;
+  color: rgb(171, 202, 255);
+  z-index: 10;
+}
+
+.drop-zoon__preview-image {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  padding: 0.3125rem;
+  border-radius: 10px;
+  display: none;
+  z-index: 1000;
+  transition: opacity 300ms ease-in-out;
+}
+
+.drop-zoon:hover .drop-zoon__preview-image {
+  opacity: 0.8;
+}
+
+.drop-zoon__file-input {
+  display: none;
+}
+
+/* (drop-zoon--over) Modifier Class */
+.drop-zoon--over {
+  border-color: rgb(63, 134, 255);
+}
+
+.drop-zoon--over .drop-zoon__icon,
+.drop-zoon--over .drop-zoon__paragraph {
+  opacity: 0.7;
+}
+
+
+
+.drop-zoon--Uploaded .drop-zoon__icon,
+.drop-zoon--Uploaded .drop-zoon__paragraph {
+  display: none;
+}
+
+/* File Details Area */
+.upload-area__file-details {
+  height: 0;
+  visibility: hidden;
+  opacity: 0;
+  text-align: left;
+  transition: none 500ms ease-in-out;
+  transition-property: opacity, visibility;
+  transition-delay: 500ms;
+}
+
+/* (duploaded-file--open) Modifier Class */
+.file-details--open {
+  height: auto;
+  visibility: visible;
+  opacity: 1;
+}
+
+.file-details__title {
+  font-size: 1.125rem;
+  font-weight: 500;
+  color: rgb(59, 68, 87);
+}
+
+/* Uploaded File */
+.uploaded-file {
+  display: flex;
+  align-items: center;
+  padding: 0.625rem 0;
+  visibility: hidden;
+  opacity: 0;
+  transition: none 500ms ease-in-out;
+  transition-property: visibility, opacity;
+}
+
+/* (duploaded-file--open) Modifier Class */
+.uploaded-file--open {
+  visibility: visible;
+  opacity: 1;
+}
+
+.uploaded-file__icon-container {
+  position: relative;
+  margin-right: 0.3125rem;
+}
+
+.uploaded-file__icon {
+  font-size: 3.4375rem;
+  color: rgb(63, 134, 255);
+}
+
+.uploaded-file__icon-text {
+  position: absolute;
+  top: 1.5625rem;
+  left: 50%;
+  transform: translateX(-50%);
+  font-size: 0.9375rem;
+  font-weight: 500;
+  color: white
+}
+
+.uploaded-file__info {
+  position: relative;
+  top: -0.3125rem;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+}
+
+.uploaded-file__info::before,
+.uploaded-file__info::after {
+  content: '';
+  position: absolute;
+  bottom: -0.9375rem;
+  width: 0;
+  height: 0.5rem;
+  background-color: #ebf2ff;
+  border-radius: 0.625rem;
+}
+
+.uploaded-file__info::before {
+  width: 100%;
+}
+
+.uploaded-file__info::after {
+  width: 100%;
+  background-color: rgb(63, 134, 255);
+}
+
+/* Progress Animation */
+.uploaded-file__info--active::after {
+  animation: progressMove 800ms ease-in-out;
+  animation-delay: 300ms;
+}
+
+@keyframes progressMove {
+  from {
+    width: 0%;
+    background-color: transparent;
+  }
+
+  to {
+    width: 100%;
+    background-color: rgb(63, 134, 255);
+  }
+}
+
+.uploaded-file__name {
+  width: 100%;
+  max-width: 6.25rem; /* 100px */
+  display: inline-block;
+  font-size: 1rem;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.uploaded-file__counter {
+  font-size: 1rem;
+  color: rgb(196, 195, 196);
+}
+
+
+
+
+
+
+
+
+
+
+
+.upload-area {
+  width: 100%;
+  max-width: 30rem;
+  background-color: rgb(255, 255, 255);
+  border: 2px solid rgb(171, 202, 255);
+  border-radius: 24px;
+  padding: 2rem 1.875rem 5rem 1.875rem;
+  margin: 0.95rem;
+  margin-top: 30px;
+  text-align: left;
+  margin-left: 430px; /* Change this value to move it to the right */
+}
+
+
+
+
+
+
+
+.upload-area__drop-zoon {
+  height: 15rem; /* Adjust this value to increase the height of the drop zone */
+}
+
+
+.upload-area {
+  width: 92%; /* Adjust this value to increase the width */
+  max-width: 90rem;
+  height: 29rem; /* Adjust this value to increase the height */
+  background-color: rgb(255, 255, 255);
+  border: 2px solid rgb(171, 202, 255);
+  border-radius: 10px;
+  padding: 2rem 1.875rem 5rem 1.875rem;
+  margin-top: 30px;
+  text-align: left;
+  margin-left: 73px; /* Move to the right */
+  margin-right: 0; /* Ensure there is no margin on the right side */
+}
+
+
+.share {
+  margin-left: 455px;
+  margin-right: 0; /* Ensure there is no margin on the right side */
+  color: #327488;
+
+
+  max-width: 160px;
+  width: 100%;
+  overflow: hidden;
+  border-radius: 20px;
+  background-color: white;
+  box-shadow: 0px 0px 16px 7px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease;
+  height: 40px;
+}
+button {
+  padding: 100px;
+  bottom: 50%; /* Add this */
+  left: 50%; /* Add this */
+  transform: translate(-50%, 50%); /* Add this */
+}

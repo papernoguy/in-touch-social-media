@@ -42,7 +42,8 @@ body {
   min-height: 100vh; /* גובה מינימלי של 100% מהחלון הגודל */
   margin: 0; /* מסיר את השוליים שברירת המחדל של הדף */
   padding: 0; /* מסיר את הריפודים שברירת המחדל של הדף */
-  background-image: url("img/back.jpg"); /* רקע בתמונת רקע */
+  background-color: rgb(53, 47, 47);
+  background: linear-gradient(to right, #adc8da, #0b37af);
   background-size: cover; /* מתאים את תמונת הרקע לגודל החלון */
   background-repeat: no-repeat; /* אין חזרה של התמונה ברקע */
 }
