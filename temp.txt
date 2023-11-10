@@ -3,10 +3,9 @@ http://localhost:3000/community/createCommunity
   "name": "New Community",
   "bio": "This is a new community.",
   "photoRef": "path/to/photo",
-  "privacySettings": {
-    "approvalPolicy": "admin-approval",
-    "visibility": "visible"
-  }
+  "approvalPolicy": "admin-approval",
+  "visibility": "visible"
+
 }
 
 
@@ -15,6 +14,7 @@ http://localhost:3000/auth/login
   "userName": "myuser",
   "Password": "mypassword"
 }
+
 {
   "userName": "myuser1",
   "Password": "mypassword1"

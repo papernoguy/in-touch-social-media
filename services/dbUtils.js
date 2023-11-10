@@ -1,5 +1,7 @@
 const Community = require("../models/community");
 const User = require("../models/user");
+const {Types} = require("mongoose"); // replace with your actual path to the Community model
+
 const saveModel = (modelInstance, res, next) => {
     modelInstance.save()
         .then(() => {
@@ -16,14 +18,15 @@ const findCommunityByName = (communityName) => {
 const findCommunityById = (communityId) => {
     return Community.findById(communityId);
 }
-const isUserIdExists = (userId) => {
-    return !!User.findById(userId);
-}
+
+
+
+
+
 module.exports = {
     findCommunityById,
     saveModel,
     findCommunityByName,
-    isUserIdExists,
 };
 
 
