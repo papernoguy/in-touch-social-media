@@ -1,16 +1,17 @@
 // TO START THE SERVER: npm start (or: npm run dev)
-const express = require("express");
-const path = require("path");
+
 const cookieParser = require("cookie-parser");
 const logger = require("morgan");
+const session = require("express-session");
+const flash = require("connect-flash");
+const express = require("express");
+const path = require("path");
 const indexRouter = require("./routes/index");
 const usersRouter = require("./routes/users");
 const authRouter = require("./routes/auth");
-const userCommunityRouter = require("./routes/userCommunityRoutes");
-const adminCommunityRouter = require("./routes/adminCommunityRoutes");
-const session = require("express-session");
-const flash = require("connect-flash");
-const authorization = require("./services/authorization");
+const communityRouter = require("./routes/communityRoutes");
+
+
 
 //const errorHandler = require("./services/error-handler");
 const app = express();
@@ -38,14 +39,10 @@ app.use("/", indexRouter);
 app.use("/users", usersRouter);
 app.use("/auth", authRouter);
 
-//session routes
-app.use('/community', authorization.isLoggedIn);
-app.use("/community", userCommunityRouter);
 
-//admin routes
-app.use('/admin', authorization.isLoggedIn);
-app.use('/admin', authorization.isAdmin);
-app.use("/admin", adminCommunityRouter);
+//community routes
+app.use("/communities", communityRouter);
+
 
 
 

@@ -28,20 +28,24 @@ const communitySchema = new mongoose.Schema({
         membersList: [{
             type: mongoose.Schema.Types.ObjectId,
             ref: 'User',
+            default: [],
         }],
         pendingJoinRequests: [{
             type: mongoose.Schema.Types.ObjectId,
             ref: 'User',
+            default: [],
         }],
         blockedUsers: [{
             type: mongoose.Schema.Types.ObjectId,
-            ref: 'User'
+            ref: 'User',
+            default: [],
         }]
     },
 
     chatRooms: [{
         type: mongoose.Schema.Types.ObjectId,
-        ref: 'ChatRoom'
+        ref: 'ChatRoom',
+        default: [],
     }]
 });
 
