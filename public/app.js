@@ -33,6 +33,10 @@ function redirectToAddPostPage(){
     window.location.href = 'NewPost.html';
 }
 
+function logoutUser(){
+    window.location.href = '/auth/logout';
+}
+
 
 
 
