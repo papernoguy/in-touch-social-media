@@ -12,7 +12,11 @@ const privateChatSchema = new mongoose.Schema({
     messagesList: [{
         type: mongoose.Schema.Types.ObjectId,
         ref: 'Message'
-    }]
+    }],
+    time: {
+        type: Date,
+        default: Date.now
+    },
 });
 
 const PrivateChat = mongoose.model('PrivateChat', privateChatSchema);

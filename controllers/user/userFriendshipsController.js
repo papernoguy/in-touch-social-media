@@ -65,7 +65,6 @@ async function acceptFriendRequest(senderId, receiverId) {
   const updateReceiver = {
     $pull: { "friends.pendingFriendRequests": senderId },
     $push: { "friends.friendsList": senderId },
-
   };
   const senderFilter = { _id: senderId };
   const updateSender = {
@@ -149,7 +148,7 @@ async function addToBlockList(blockerId, blockedUserId) {
   const updateReceiver = {
     $push: { "blockedList": blockedUserId },
   };
-  
+
   try {
     const receiverResult = await User.updateOne(receiverFilter, updateReceiver);
     if (receiverResult.matchedCount === 1 && senderResult.matchedCount === 1) {
@@ -172,7 +171,7 @@ async function removeFromBlockList(blockerId, blockedUserId) {
   const updateReceiver = {
     $pull: { "blockedList": blockedUserId },
   };
-  
+
   try {
     const receiverResult = await User.updateOne(receiverFilter, updateReceiver);
     if (receiverResult.matchedCount === 1 && senderResult.matchedCount === 1) {
