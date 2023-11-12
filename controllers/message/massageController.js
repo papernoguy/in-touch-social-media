@@ -1,30 +1,46 @@
 // userMessage.controller.js
 const Message = require('../../models/message');
 const User = require('../../models/user');
+const { getStockData } = require('../../services/tickerInfoService')
 
 
 const { validateMessageData } = require('../../services/validator'); // Import the validation middleware
-function createMessage(messageData) {
+async function createMessage(messageData, userId) {
     // if the massage contains ticker symbol like "$AAPL" call tickerInfoService to get the ticker info and substring it to the message:
     // example: "Hello World! $AAPL" -> "Hello World! $AAPL, Ticker: $AAPL, Price: 123.45, Change: +1.23"
-    return null;
+    const user = await User.findOne({ _id: userId });
+    const regex = /\$[^\s]*/g;
+    const matches = messageData.match(regex);
+    tickerName = matches[0].replace(/\$/g, '');
+    const tickerData = await getStockData(tickerName);
+    const message = new Message({ author: user, originalText: messageData, tickerInfo: tickerData })
+    await message.save()
+    return message
 }
 
-function deleteMessage(messageId, userId) {
+async function deleteMessage(messageId, userId) {
     // Ensure that the message is by the user
-    return null;
+    const result = await Message.deleteOne({ _id: messageId, author: userId });
+    if (result) {
+        console.log("Message deleted Successfuly.");
+    }
+    else {
+        console.log("Message not found.");
+    }
 }
 
-function getMessageById(messageId) {
+async function getMessageById(messageId) {
     // Retrieve a specific message by its ID.
     // This would involve querying your database for a message with the given ID.
-    return null;
+    const message = await Message.findById(messageId);
+    return message
 }
 
-function listMessagesByUser(userId) {
+async function listMessagesByUser(userId) {
     // List all messages sent by a specific user.
     // This would involve querying your database for all messages with a sender ID matching the provided user ID.
-    return null;
+    const messagesFromUser = await Message.find({ author: userId });
+    return messagesFromUser
 }
 
 module.exports = {
