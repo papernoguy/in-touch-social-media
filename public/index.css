@@ -114,3 +114,20 @@ nav .right img{
 i{
     color: white;
 }
+
+h5{
+color: black;
+
+}
+.hours{
+    color: black; 
+}
+.leave{
+    color: red;
+}
+.group_name_set{
+    color: rgb(0, 0, 0);
+    font-size: 30px; /* גודל הסמל */
+    font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+  }
+  
