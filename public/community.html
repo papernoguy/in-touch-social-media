@@ -6,10 +6,17 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet"
     integrity="sha384-KK94CHFLLe+nY2dmCWGMq91rCGa5gtU4mk92HdvYe+M/SXH301p5ILy+dN9+nJOZ" crossorigin="anonymous">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
+   
     <!-- CSS File -->
-    <link rel="stylesheet" href="index.css" />
-    <link rel="stylesheet" href="community.css" />
+    <link rel="stylesheet" href="./community.css" />
     <link rel="icon" href="img/massage.png">
+
+
+
+    
+    <link rel="stylesheet" href="./styles.css">
+    
+    <link rel="stylesheet" href="./index.css" />
     <title>Community</title>
 </head>
 <body>
@@ -32,9 +39,9 @@
 
         <div class="center">
 
-            <i class="bi bi-chat-dots-fill" onclick="redirectToChatPage()"></i>
-            <i class="bi bi-globe" onclick="redirectToCommunityPage()"></i>
-            <i class="bi bi-pencil-square" onclick="redirectToAddPostPage()"></i>
+            <i class=" bi-chat-dots-fill" onclick="redirectToChatPage()"></i>
+            <i class=" bi-globe" onclick="redirectToCommunityPage()"></i>
+            <i class=" bi-pencil-square" onclick="redirectToAddPostPage()"></i>
 
         </div>
 
@@ -49,20 +56,94 @@
     </nav>
 
 
-    <div class="flex-container ">
-      <div class="big_featured">
-        <img class="big_img" src="https://static.vecteezy.com/system/resources/previews/001/330/144/non_2x/realistic-soccer-or-football-in-net-with-copy-space-free-vector.jpg">
-        <div class="featured_info col-lg-6 col-sm-2">
-          <div class="title col-lg-6 ">
-            <h2>FOOTBALL</h2>
-          </div>
+
+
+
+
+    <div id="alerts-container" class="d-flex justify-content-center align-items-center">
+        <div id="copyAlert" class="alert" role="alert"></div>
+    </div>
+
+<br><br><br>
+
+    <div class="container-xxl bd-gutter mt-3 my-md-4 bd-layout">
+
+        <!-- Sidebar -->
+        <aside class="bd-sidebar offcanvas-lg offcanvas-start" tabindex="-1" id="bdSidebar" aria-labelledby="bdSidebarOffcanvasLabel">
+            <section class=" offcanvas-body bd-links w-100" id="bd-docs-nav" aria-label="Docs navigation">
+                <ul class="bd-links-nav list-unstyled mb-0 pb-3 pb-md-2 pe-lg-2">
+    
+                    <!-- Circle Profile Image -->
+                    <li class="py-1 text-center">
+                        <div id="Circ" class="bd-placeholder-img rounded-circle d-inline-flex align-items-center justify-content-center">
+                            <img src="" alt="User Avatar" id="round_c" class="rounded-circle"  loading="lazy">
+                        </div>
+                    </li>
+    
+                    <!-- Headline -->
+                    <li class="py-1 d-flex justify-content-between align-items-center" >
+    
+                        <a href="javascript:void(0);" id="openProfileModalLink">
+                            <h5 id="communityNameH5"></h5>
+                        </a>
+    
+                        <!-- Three dots menu -->
+                        <div class="threeDotsMenuContainer">
+                            <button type="button" class="btn" data-bs-toggle="dropdown" aria-expanded="false">
+                                <svg class="bi"><use xlink:href="#three-dots-vertical"></use></svg>
+    
+                            </button>
+                            <ul class="dropdown-menu custom-dropdown" id="threeDotsMenuItems">
+                                <!-- Menu items will be loaded here -->
+                            </ul>
+                        </div>
+                    </li>
+    
+                    <!-- Labels -->
+                    <div id="info-labels" class="text-left">
+                        <!-- Icon and privacy status will be inserted here -->
+                    </div>
+                    <!-- Search Box -->
+                    <li class="py-2">
+                        <div class="input-group">
+                            <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+                        </div>
+                    </li>
+                    <br>
+                    <!-- Chat Rooms -->
+                    <li class="bd-links-group py-2">
+                        <div class="chatrooms-header-container">
+                            <svg class="chatrooms-icon" aria-hidden="true">
+                                <use xlink:href="#chat-left-text-fill"></use>
+                            </svg>
+                            Chat Rooms
+                        </div>
+    
+                        <ul class=" fw-normal pb-2 small" id="chatRoomsList">
+                            <!-- Chat rooms will be loaded here -->
+                        </ul>
+                    </li>
+    
+    
+                    <!-- Divider -->
+                    <div class="custom-divider"></div>
+                </ul>
+            </section>
+        </aside>
+    
+    
+    <!-- Main Content Area -->
+    <main class="bd-main order-1">
+
+         
+    <section class="community-section ">
+        
+        <div class="community-card">
+                    
+        <div id="content" class="bd-content ps-lg-2 left">
+            <!-- Content will be dynamically inserted here -->
 
         </div>
-      </div>
-
-
-    <section class="community-section">
-        <div class="community-card">
           <div class="user back">
             
             <img src="https://yt3.ggpht.com/a/AGF-l7-0J1G0Ue0mcZMw-99kMeVuBmRxiPjyvIYONg=s900-c-k-c0xffffffff-no-rj-mo" alt="user" />
@@ -92,7 +173,7 @@
               <div class="comment commented-user">
                 <div class="k">
                   <h5>Samoya Johns</h5>
-                  <span class="p-2">5 hours ago</span>
+                  <span class="p-2 hours">5 hours ago</span>
                   <div class="dropdown">
                     <i class="bi bi-list dropdown-icon" onclick="toggleDropdown('dropdown1')"></i>
                     <!-- תפריט נפתח -->
@@ -111,7 +192,7 @@
               <div class="comment commented-user">
                 <div class="k">
                   <h5>Samoya Johns</h5>
-                  <span class="p-2">5 hours ago</span>
+                  <span class="p-2 hours">5 hours ago</span>
                   <div class="dropdown">
                     <i class="bi bi-list dropdown-icon" onclick="toggleDropdown('dropdown2')"></i>
                     <!-- תפריט נפתח -->
@@ -128,7 +209,7 @@
               <div class="comment commented-user">
                 <div class="k">
                   <h5>Samoya Johns</h5>
-                  <span class="p-2">5 hours ago</span>
+                  <span class="p-2 hours">5 hours ago</span>
                   <div class="dropdown">
                     <i class="bi bi-list dropdown-icon " onclick="toggleDropdown('dropdown3')"></i>
                     <!-- תפריט נפתח -->
@@ -180,10 +261,850 @@
 
       </section>
 
+ 
+    </main>
+
+</div>
+
+
+<!-- Profile Modal -->
+<div id="profileModal" class="modal">
+    <div class="modal-content">
+        <span class="close" onclick="closeProfileModal()">&times;</span>
+
+        <div class="profile-container">
+            <div class="image-section">
+                <img src="" alt="Profile Picture" id="COMIMG">
+            </div>
+            <div class="text-section">
+
+                <div class="header-section">
+                    <h3 id="communityNameH3"></h3>
+                    <button id="shareBtn" class="btn btn-outline-secondary" onclick="copyLinkToClipboard()">
+                        <svg class="bi"><use xlink:href="#share-fill"></use></svg>
+                    </button>
+
+                </div>
+
+                <div id="modal-info-labels" class="text-left">
+                    <!-- Icon and privacy status will be inserted here -->
+                </div>
+                <p class="community-bio"></p>
+                <div class="mb-3 mb-md-0 d-flex justify-content-between">
+                    <div id="membership-btn">
+                        <!-- Content will be set by JavaScript -->
+                    </div>
+                </div>
+            </div>
+
+                <div class="members-section" id="member-section">
+
+                    <div class="members-header">
+                        <h6>Members <span id="memberCount"></span></h6>
+                        <!-- Search Box -->
+                        <div class="input-group">
+                            <input class="form-control mr-sm-2" type="search" placeholder="Search member" aria-label="Search">
+                        </div>
+                    </div>
+
+                    <div class="members-catalog">
+                        <!-- Profiles will be loaded here -->
+                    </div>
+
+                    <button id="loadMore" class="btn btn-ml btn-bd-light rounded-2">Load More</button>
+                </div>
+        </div>
+    </div>
+
+</div>
+
+
+<!-- Leave Community Confirmation Modal -->
+<div class="modal" id="confirmLeaveModal" tabindex="-1">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title">Confirm Leave</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <p>Are you sure you want to leave?</p>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                <button type="button" class="btn btn-danger" id="confirmLeaveButton">Leave Group</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<!-- Icons from https://icons.getbootstrap.com/ -->
+<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-chat-left-text-fill" viewBox="0 0 16 16">
+    <symbol id="chat-left-text-fill" viewBox="0 0 16 16">
+        <path d="M0 2a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H4.414a1 1 0 0 0-.707.293L.854 15.146A.5.5 0 0 1 0 14.793V2zm3.5 1a.5.5 0 0 0 0 1h9a.5.5 0 0 0 0-1h-9zm0 2.5a.5.5 0 0 0 0 1h9a.5.5 0 0 0 0-1h-9zm0 2.5a.5.5 0 0 0 0 1h5a.5.5 0 0 0 0-1h-5z"/>
+    </symbol>
+
+    <symbol id="postcard-fill" viewBox="0 0 16 16">
+        <path fill-rule="evenodd" d="M2 2a2 2 0 0 0-2 2v8a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V4a2 2 0 0 0-2-2H2ZM1 4a1 1 0 0 1 1-1h12a1 1 0 0 1 1 1v8a1 1 0 0 1-1 1H2a1 1 0 0 1-1-1V4Zm7.5.5a.5.5 0 0 0-1 0v7a.5.5 0 0 0 1 0v-7ZM2 5.5a.5.5 0 0 1 .5-.5H6a.5.5 0 0 1 0 1H2.5a.5.5 0 0 1-.5-.5Zm0 2a.5.5 0 0 1 .5-.5H6a.5.5 0 0 1 0 1H2.5a.5.5 0 0 1-.5-.5Zm0 2a.5.5 0 0 1 .5-.5H6a.5.5 0 0 1 0 1H2.5a.5.5 0 0 1-.5-.5ZM10.5 5a.5.5 0 0 0-.5.5v3a.5.5 0 0 0 .5.5h3a.5.5 0 0 0 .5-.5v-3a.5.5 0 0 0-.5-.5h-3ZM13 8h-2V6h2v2Z"/>
+    </symbol>
+
+    <symbol id="people-fill" viewBox="0 0 16 16">
+        <path d="M7 14s-1 0-1-1 1-4 5-4 5 3 5 4-1 1-1 1H7Zm4-6a3 3 0 1 0 0-6 3 3 0 0 0 0 6Zm-5.784 6A2.238 2.238 0 0 1 5 13c0-1.355.68-2.75 1.936-3.72A6.325 6.325 0 0 0 5 9c-4 0-5 3-5 4s1 1 1 1h4.216ZM4.5 8a2.5 2.5 0 1 0 0-5 2.5 2.5 0 0 0 0 5Z"/>
+    </symbol>
+
+    <symbol id="unlocked" viewBox="0 0 16 16">
+        <path d="M11 1a2 2 0 0 0-2 2v4a2 2 0 0 1 2 2v5a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V9a2 2 0 0 1 2-2h5V3a3 3 0 0 1 6 0v4a.5.5 0 0 1-1 0V3a2 2 0 0 0-2-2zM3 8a1 1 0 0 0-1 1v5a1 1 0 0 0 1 1h6a1 1 0 0 0 1-1V9a1 1 0 0 0-1-1H3z"/>
+    </symbol>
+    <symbol id="lock" viewBox="0 0 16 16">
+        <path d="M8 1a2 2 0 0 1 2 2v4H6V3a2 2 0 0 1 2-2zm3 6V3a3 3 0 0 0-6 0v4a2 2 0 0 0-2 2v5a2 2 0 0 0 2 2h6a2 2 0 0 0 2-2V9a2 2 0 0 0-2-2zM5 8h6a1 1 0 0 1 1 1v5a1 1 0 0 1-1 1H5a1 1 0 0 1-1-1V9a1 1 0 0 1 1-1z"/>
+    </symbol>
+
+    <symbol id="three-dots-vertical" viewBox="0 0 16 16">
+        <path d="M9.5 13a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0zm0-5a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0zm0-5a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0z"/>
+    </symbol>
+
+    <symbol id="share" viewBox="0 0 16 16">
+        <path d="M13.5 1a1.5 1.5 0 1 0 0 3 1.5 1.5 0 0 0 0-3zM11 2.5a2.5 2.5 0 1 1 .603 1.628l-6.718 3.12a2.499 2.499 0 0 1 0 1.504l6.718 3.12a2.5 2.5 0 1 1-.488.876l-6.718-3.12a2.5 2.5 0 1 1 0-3.256l6.718-3.12A2.5 2.5 0 0 1 11 2.5zm-8.5 4a1.5 1.5 0 1 0 0 3 1.5 1.5 0 0 0 0-3zm11 5.5a1.5 1.5 0 1 0 0 3 1.5 1.5 0 0 0 0-3z"/>
+    </symbol>
+
+    <symbol id="share-fill" viewBox="0 0 16 16">
+        <path d="M11 2.5a2.5 2.5 0 1 1 .603 1.628l-6.718 3.12a2.499 2.499 0 0 1 0 1.504l6.718 3.12a2.5 2.5 0 1 1-.488.876l-6.718-3.12a2.5 2.5 0 1 1 0-3.256l6.718-3.12A2.5 2.5 0 0 1 11 2.5z"/>
+    </symbol>
+
+    <symbol id="bell" viewBox="0 0 16 16">
+        <path d="M8 16a2 2 0 0 0 2-2H6a2 2 0 0 0 2 2zM8 1.918l-.797.161A4.002 4.002 0 0 0 4 6c0 .628-.134 2.197-.459 3.742-.16.767-.376 1.566-.663 2.258h10.244c-.287-.692-.502-1.49-.663-2.258C12.134 8.197 12 6.628 12 6a4.002 4.002 0 0 0-3.203-3.92L8 1.917zM14.22 12c.223.447.481.801.78 1H1c.299-.199.557-.553.78-1C2.68 10.2 3 6.88 3 6c0-2.42 1.72-4.44 4.005-4.901a1 1 0 1 1 1.99 0A5.002 5.002 0 0 1 13 6c0 .88.32 4.2 1.22 6z"/>
+    </symbol>
+
+    <symbol id="door-open" viewBox="0 0 16 16">
+        <path d="M8.5 10c-.276 0-.5-.448-.5-1s.224-1 .5-1 .5.448.5 1-.224 1-.5 1z"/>
+        <path d="M10.828.122A.5.5 0 0 1 11 .5V1h.5A1.5 1.5 0 0 1 13 2.5V15h1.5a.5.5 0 0 1 0 1h-13a.5.5 0 0 1 0-1H3V1.5a.5.5 0 0 1 .43-.495l7-1a.5.5 0 0 1 .398.117zM11.5 2H11v13h1V2.5a.5.5 0 0 0-.5-.5zM4 1.934V15h6V1.077l-6 .857z"/>
+    </symbol>
+
+    <symbol id="person-slash" viewBox="0 0 16 16">
+        <path d="M13.879 10.414a2.501 2.501 0 0 0-3.465 3.465l3.465-3.465Zm.707.707-3.465 3.465a2.501 2.501 0 0 0 3.465-3.465Zm-4.56-1.096a3.5 3.5 0 1 1 4.949 4.95 3.5 3.5 0 0 1-4.95-4.95ZM11 5a3 3 0 1 1-6 0 3 3 0 0 1 6 0ZM8 7a2 2 0 1 0 0-4 2 2 0 0 0 0 4Zm.256 7a4.474 4.474 0 0 1-.229-1.004H3c.001-.246.154-.986.832-1.664C4.484 10.68 5.711 10 8 10c.26 0 .507.009.74.025.226-.341.496-.65.804-.918C9.077 9.038 8.564 9 8 9c-5 0-6 3-6 4s1 1 1 1h5.256Z"/>
+    </symbol>
+
+    <symbol id="chat-left-dots" viewBox="0 0 16 16">
+        <path d="M14 1a1 1 0 0 1 1 1v8a1 1 0 0 1-1 1H4.414A2 2 0 0 0 3 11.586l-2 2V2a1 1 0 0 1 1-1h12zM2 0a2 2 0 0 0-2 2v12.793a.5.5 0 0 0 .854.353l2.853-2.853A1 1 0 0 1 4.414 12H14a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2H2z"/>
+        <path d="M5 6a1 1 0 1 1-2 0 1 1 0 0 1 2 0zm4 0a1 1 0 1 1-2 0 1 1 0 0 1 2 0zm4 0a1 1 0 1 1-2 0 1 1 0 0 1 2 0z"/>
+    </symbol>
+
+    <symbol id="person-add" viewBox="0 0 16 16">
+        <path d="M12.5 16a3.5 3.5 0 1 0 0-7 3.5 3.5 0 0 0 0 7Zm.5-5v1h1a.5.5 0 0 1 0 1h-1v1a.5.5 0 0 1-1 0v-1h-1a.5.5 0 0 1 0-1h1v-1a.5.5 0 0 1 1 0Zm-2-6a3 3 0 1 1-6 0 3 3 0 0 1 6 0ZM8 7a2 2 0 1 0 0-4 2 2 0 0 0 0 4Z"/>
+        <path d="M8.256 14a4.474 4.474 0 0 1-.229-1.004H3c.001-.246.154-.986.832-1.664C4.484 10.68 5.711 10 8 10c.26 0 .507.009.74.025.226-.341.496-.65.804-.918C9.077 9.038 8.564 9 8 9c-5 0-6 3-6 4s1 1 1 1h5.256Z"/>
+    </symbol>
+    <symbol id="hourglass-split" viewBox="0 0 16 16">
+        <path d="M2.5 15a.5.5 0 1 1 0-1h1v-1a4.5 4.5 0 0 1 2.557-4.06c.29-.139.443-.377.443-.59v-.7c0-.213-.154-.451-.443-.59A4.5 4.5 0 0 1 3.5 3V2h-1a.5.5 0 0 1 0-1h11a.5.5 0 0 1 0 1h-1v1a4.5 4.5 0 0 1-2.557 4.06c-.29.139-.443.377-.443.59v.7c0 .213.154.451.443.59A4.5 4.5 0 0 1 12.5 13v1h1a.5.5 0 0 1 0 1h-11zm2-13v1c0 .537.12 1.045.337 1.5h6.326c.216-.455.337-.963.337-1.5V2h-7zm3 6.35c0 .701-.478 1.236-1.011 1.492A3.5 3.5 0 0 0 4.5 13s.866-1.299 3-1.48V8.35zm1 0v3.17c2.134.181 3 1.48 3 1.48a3.5 3.5 0 0 0-1.989-3.158C8.978 9.586 8.5 9.052 8.5 8.351z"/>
+    </symbol>
+    <symbol id="check2-circle" viewBox="0 0 16 16">
+        <path d="M2.5 8a5.5 5.5 0 0 1 8.25-4.764.5.5 0 0 0 .5-.866A6.5 6.5 0 1 0 14.5 8a.5.5 0 0 0-1 0 5.5 5.5 0 1 1-11 0z"/>
+        <path d="M15.354 3.354a.5.5 0 0 0-.708-.708L8 9.293 5.354 6.646a.5.5 0 1 0-.708.708l3 3a.5.5 0 0 0 .708 0l7-7z"/>
+    </symbol>
+</svg>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
     <script src="app.js"></script>
     
     <script src="p.js"></script>
+
+  
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+<script>
+
+    // Those are temp community and user object to build this page
+    var community = {
+        _id: "60e65cf31f8b9c601c8e2e45",
+        name: "Tech Enthusiasts",
+        bio: "A community for tech lovers to share and discuss the latest in technology.",
+        photoRef: "https://mdbcdn.b-cdn.net/img/new/avatars/9.webp",
+        dateCreated: new Date(),
+
+        privacySettings: {
+            approvalPolicy: "auto-join",
+            visibility: "visible"
+        },
+
+        members: {
+            adminsList: [
+                {_id: "60e65cf31f8b9c601c8e2e34", username: "DataDiver04", profilePictureRef: "https://mdbcdn.b-cdn.net/img/new/avatars/9.webp", address: "123 Main St" },
+                {_id: "60e65cf31f8b9c601c8e2e35", username: "QuantumQueen05", profilePictureRef: "https://mdbcdn.b-cdn.net/img/new/avatars/9.webp", address: "123 Main St" },
+                {_id: "60e65cf31f8b9c601c8e2e37", username: "DevDynamo07", profilePictureRef: "https://mdbcdn.b-cdn.net/img/new/avatars/9.webp", address: "123 Main St" },
+
+            ],
+            membersList: [
+                {_id: "60e65cf31f8b9c601c8e2e3f", username: "guy paperno", profilePictureRef: "https://mdbcdn.b-cdn.net/img/new/avatars/9.webp", address: "456 Main St" },
+                {_id: "60e65cf31f8b9c601c8e2e31", username: "TechGuru01", profilePictureRef: "https://mdbcdn.b-cdn.net/img/new/avatars/9.webp", address: "123 Main St" },
+                {_id: "60e65cf31f8b9c601c8e2e32", username: "CodeMaster02", profilePictureRef: "https://mdbcdn.b-cdn.net/img/new/avatars/9.webp", address: "123 Main St" },
+                {_id: "60e65cf31f8b9c601c8e2e33", username: "PixelPainter03", profilePictureRef: "https://mdbcdn.b-cdn.net/img/new/avatars/9.webp", address: "123 Main St" },
+                {_id: "60e65cf31f8b9c601c8e2e36", username: "CryptoKing06", profilePictureRef: "https://mdbcdn.b-cdn.net/img/new/avatars/9.webp", address: "123 Main St" },
+                {_id: "60e65cf31f8b9c601c8e2e38", username: "BitBuddy08", profilePictureRef: "https://mdbcdn.b-cdn.net/img/new/avatars/9.webp", address: "123 Main St" },
+                {_id: "60e65cf31f8b9c601c8e2e39", username: "NetworkNinja09", profilePictureRef: "https://mdbcdn.b-cdn.net/img/new/avatars/9.webp", address: "123 Main St" },
+                {_id: "60e65cf31f8b9c601c8e2e30", username: "JavaJester10", profilePictureRef: "https://mdbcdn.b-cdn.net/img/new/avatars/9.webp", address: "123 Main St" },
+                {_id: "60e65cf31f8b9c601c8e2e3h", username: "TerminalTitan18", profilePictureRef: "https://mdbcdn.b-cdn.net/img/new/avatars/9.webp", address: "123 Main St" },
+                {_id: "60e65cf31f8b9c601c8e2e3i", username: "BinaryBard19", profilePictureRef: "https://mdbcdn.b-cdn.net/img/new/avatars/9.webp", address: "123 Main St" },
+                {_id: "60e65cf31f8b9c601c8e2e3j", username: "CompilerCowboy20", profilePictureRef: "https://mdbcdn.b-cdn.net/img/new/avatars/9.webp", address: "123 Main St" },
+                {_id: "60e65cf31f8b9c601c8e2e3a", username: "PythonPal11", profilePictureRef: "https://mdbcdn.b-cdn.net/img/new/avatars/9.webp", address: "123 Main St" },
+                {_id: "60e65cf31f8b9c601c8e2e3b", username: "CloudChaser12", profilePictureRef: "https://mdbcdn.b-cdn.net/img/new/avatars/9.webp", address: "123 Main St" },
+                {_id: "60e65cf31f8b9c601c8e2e3c", username: "RubyRover13", profilePictureRef: "https://mdbcdn.b-cdn.net/img/new/avatars/9.webp", address: "123 Main St" },
+
+            ],
+            pendingJoinRequests: [
+                {_id: "60e65cf31f8b9c601c8e2e3d", username: "AlgorithmAce14", profilePictureRef: "https://mdbcdn.b-cdn.net/img/new/avatars/9.webp", address: "123 Main St" },
+                {_id: "60e65cf31f8b9c601c8e2e3e", username: "LinuxLover15", profilePictureRef: "https://mdbcdn.b-cdn.net/img/new/avatars/9.webp", address: "123 Main St" },
+                {_id: "60e65cf31f8b9c601c8e2e3x", username: "ShellSherlock16", profilePictureRef: "https://mdbcdn.b-cdn.net/img/new/avatars/9.webp", address: "123 Main St" },
+            ],
+            blockedUsers: [
+                {_id: "60e65cf31f8b9c601c8e2e3g", username: "DebugDuke17", profilePictureRef: "https://mdbcdn.b-cdn.net/img/new/avatars/9.webp", address: "123 Main St" },
+
+            ]
+        },
+
+        chatRooms: [
+            { _id: "60e65cf31f8b9c601c8e2e44", chatName: "General Chat" },
+            { _id: "60e65cf31f8b9c601c8e2e45", chatName: "Tech News" },
+            { _id: "60e65cf31f8b9c601c8e2e46", chatName: "Another Chat" }
+        ]
+    };
+    var user = {
+        _id: "60e65cf31f8b9c601c8e2e3f",
+        username: "guy paperno",
+        passwordHash: "$2b$10$K4s8sG8B0xZCw1R0ygB8M.pgr6fgCOA.zQmEIf5b8eUcMn4iPfeui",  // Hashed password
+        email: "john_doe@example.com",
+        profilePictureRef: "https://mdbcdn.b-cdn.net/img/new/avatars/9.webp",
+        address: "123 Main St, Anytown, USA",
+        bio: "Hey there! I'm John, a tech enthusiast.",
+        joinedCommunities: [
+            {
+                communityId: "60e65cf31f8b9c601c8e2e44",
+                dateJoined: new Date("2022-01-01T00:00:00Z")
+            },
+            // ... more communities
+        ],
+        friends: {
+            friendsList: ["60e65cf31f8b9c601c8e2e31", "60e65cf31f8b9c601c8e2e32","60e65cf31f8b9c601c8e2e33","60e65cf31f8b9c601c8e2e34","60e65cf31f8b9c601c8e2e35"],
+            pendingFriendRequests: ["60e65cf31f8b9c601c8e2e36","60e65cf31f8b9c601c8e2e37"],
+            receivedFriendRequests: ["60e65cf31f8b9c601c8e2e38"],
+        },
+        isActive: true,
+        blockedList: ["60e65cf31f8b9c601c8e2e39", "60e65cf31f8b9c601c8e2e30"],
+        notificationsList: ["60e65cf31f8b9c601c8e2e45"]
+    };
+
+
+    // Combine user, adminsList, and membersList to desired format
+    const profiles = [...community.members.adminsList, ...community.members.membersList].map((currentUser) => {
+
+        let tags = [];
+
+        if(user._id===currentUser._id){
+            tags.push('self');
+        }
+        const adminIds = community.members.adminsList.map(admin => admin._id);
+        if (adminIds.includes(currentUser._id)) {
+            tags.push('admin');
+        }
+        if (user.friends.friendsList.includes(currentUser._id)) {
+            tags.push('friends');
+        }
+        if (user.friends.pendingFriendRequests.includes(currentUser._id)) {
+            tags.push('pending');
+        }
+        if (user.blockedList.includes(currentUser._id)) {
+            tags.push('blocked');
+        }
+        if (user.friends.receivedFriendRequests.includes(currentUser._id)) {
+            tags.push('approve');
+        }
+
+        //format the profile object
+        return {
+            id: currentUser._id,
+            name: currentUser.username,
+            imgSrc: currentUser.profilePictureRef,
+            tags: tags
+        };
+    });
+
+    <!-- Global Variables-->
+
+    // determine how many profiles to load at a time
+    let initialLoadAmount = 4;
+    let loadMoreAmount = 12;
+    let totalMemberCount = community.members.adminsList.length + community.members.membersList.length;
+    let formattedMemberCount = formatMemberCount(totalMemberCount);
+    let membershipStatus = determineMembershipStatus(community);
+
+    // functions to implement
+    function loadChatRoomContent(chatRoomName) {
+        var content = document.getElementById('content');
+        content.innerHTML = '<h3>' + chatRoomName + ' Content</h3><p>This is the content for ' + chatRoomName + '.</p>';
+    }
+
+    function toggleNotifications() {
+        // Add logic here to handle the state of notifications
+        var notificationToggle = document.getElementById('notificationToggle');
+        var isChecked = notificationToggle.checked;
+        // Add logic here to handle the state of notifications
+        console.log('User asked to ' + (isChecked ? 'enable' : 'disable') + 'notifications');
+    }
+    function leaveCommunity() {
+        // Add logic here to handle the community quitting process (notice membershipStatus is a global variable)
+        console.log('User asked to leave community');
+    }
+    function amIBlocked(aUserId) {
+        // Add logic here to check if the user has blocked the client
+        return false;
+    }
+
+
+
+
+
+    document.addEventListener('DOMContentLoaded', function() {
+
+        // Set the circle profile picture source
+        document.querySelector('.bd-placeholder-img img').src = community.photoRef;
+
+        // Set the profile picture source
+        document.querySelector('.image-section img').src = community.photoRef;
+
+        // Set the community name in the h3 header
+        document.getElementById('communityNameH3').textContent = community.name;
+
+        // Set the community name in the h5 header
+        document.getElementById('communityNameH5').textContent = community.name;
+
+        // Set the three dots menu items (defined in HTML vars section)
+        document.getElementById('threeDotsMenuItems').innerHTML = shareItem + notificationsItem + dividerItem + leaveCommunityItem;
+
+        // Update the main community info label
+        var communityInfoDiv = document.getElementById('info-labels');
+        communityInfoDiv.innerHTML = createCommunityInfoLabel(community, 'membersLink');
+
+        // when the members link is clicked, open the modal and scroll to the members section
+        document.getElementById('membersLink').addEventListener('click', event => {
+            event.preventDefault();
+            openModal();
+            scrollToMembersSection();
+        });
+
+
+        var chatRoomsList = document.getElementById('chatRoomsList');
+
+        // Load chat rooms and attach click handler to the list
+        community.chatRooms.forEach(chatRoom => {
+            var listItem = document.createElement('li');
+            var anchor = document.createElement('a');
+            anchor.href = 'javascript:void(0);';
+            anchor.className = 'chatrooms-list d-inline-block rounded';
+            anchor.textContent = chatRoom.chatName;
+            listItem.appendChild(anchor);
+            chatRoomsList.appendChild(listItem);
+        });
+
+        // Click event listener for the chatrooms list
+        chatRoomsList.addEventListener('click', function(e) {
+            var clickedElement = e.target;
+
+            if (clickedElement.classList.contains('chatrooms-list')) {
+                e.preventDefault(); // Prevent navigation
+                removeActiveClassFromLinks(); // Remove active class from all links
+                clickedElement.classList.add('active'); // Add active class to clicked link
+                loadChatRoomContent(clickedElement.textContent); // Load chat room content
+            }
+        });
+
+        // Get the link element that opens the modal
+        var openProfileModalLink = document.getElementById('openProfileModalLink');
+
+        // event listener for the headline link to open the modal and load its contents dynamically
+        openProfileModalLink.addEventListener('click', openModal);
+
+        document.getElementById('confirmLeaveButton').addEventListener('click', function() {
+            var confirmLeaveModal = bootstrap.Modal.getInstance(document.getElementById('confirmLeaveModal'));
+            confirmLeaveModal.hide();
+            leaveCommunity();
+        });
+
+
+    });
+
+
+
+    // HTML vars section (these items appear more the once on the html page, so we define them here)
+
+    var shareItem = `
+    <li>
+        <a class="dropdown-item smaller-text" href="javascript:void(0);" onclick="copyLinkToClipboard()">
+            <svg class="bi me-2">
+                <use xlink:href="#share"></use>
+            </svg>
+            Share
+        </a>
+    </li>
+`;
+
+
+    var notificationsItem = `
+    <li class="d-flex align-items-center">
+      <span class="dropdown-item smaller-text" onclick="event.stopPropagation();" style="background-color: transparent !important;">
+        <svg class="bi me-2">
+          <use xlink:href="#bell"></use>
+        </svg>
+        Notifications
+      </span>
+      <div class="form-check form-switch smaller-switch" onclick="event.stopPropagation(); toggleNotifications();">
+        <input class="form-check-input" type="checkbox" id="notificationToggle" checked>
+        <label class="form-check-label" for="notificationToggle"></label>
+      </div>
+    </li>
+`;
+
+
+    var dividerItem = `
+    <li class="bd-links-span-all mt-2 mb-2 mx-4 border-top"></li>
+  `;
+
+    var leaveCommunityItem = `
+<li>
+  <a class="dropdown-item text-danger smaller-text leave-community-link" href="javascript:void(0);" onclick="confirmLeaveCommunity()">
+    <svg class="bi me-2">
+      <use xlink:href="#door-open"></use>
+    </svg>
+    Leave Group
+  </a>
+</li>
+`;
+
+
+
+
+    // this function might not be needed if backend will attach the membership status as well
+    function determineMembershipStatus(community){
+        const adminIds = community.members.adminsList.map(admin => admin._id);
+        const membersIds = community.members.membersList.map(member => member._id);
+        const pendingIds = community.members.pendingJoinRequests.map(pending => pending._id);
+        const blockedIds = community.members.blockedUsers.map(blocked => blocked._id);
+
+        var membershipStatus = 'Foreign';
+        if(adminIds.includes(user._id)){
+            membershipStatus = 'Admin';
+        }
+        if(membersIds.includes(user._id)){
+            membershipStatus = 'Member';
+        }
+        if(pendingIds.includes(user._id)){
+            membershipStatus = 'PendingApproval';
+        }
+        if(blockedIds.includes(user._id)){
+            membershipStatus = 'Blocked';
+        }
+        return membershipStatus;
+    }
+
+
+    // this function is used to create the membership button in the profile modal (joined/ request to join/ blocked/ pending approval)
+    function createMembershipButton(membershipStatus, notificationsItem, dividerItem, leaveCommunityItem) {
+        var htmlContent = '';
+        switch (membershipStatus) {
+            case 'Foreign':
+                htmlContent = `
+                <a class="btn btn-sm btn-bd-light rounded-2" href="https://github.com/twbs/bootstrap/blob/v5.3.2/site/content/docs/5.3/forms/overview.md" title="View and edit this file on GitHub" target="_blank" rel="noopener" id="joinButton">
+                    Request to join
+                </a>
+            `;
+                break;
+            case 'Member':
+            case 'Admin':
+                htmlContent = `
+                <div class="dropdown">
+                    <button class="btn btn-sm btn-bd-light rounded-2 dropdown-toggle" type="button" id="joinButton" data-bs-toggle="dropdown" aria-expanded="false">
+                        Joined
+                    </button>
+                    <ul class="dropdown-menu" aria-labelledby="joinButton">
+                        ${notificationsItem}
+                        ${dividerItem}
+                        ${leaveCommunityItem}
+                    </ul>
+                </div>
+            `;
+                break;
+            case 'PendingApproval':
+                htmlContent = `
+                <div class="dropdown">
+                    <button class="btn btn-sm btn-bd-light rounded-2 dropdown-toggle" type="button" id="joinButton" data-bs-toggle="dropdown" aria-expanded="false">
+                        Pending approval
+                    </button>
+                    <ul class="dropdown-menu" aria-labelledby="joinButton">
+                        <li><a class="dropdown-item" href="#">Cancel request</a></li>
+                    </ul>
+                </div>
+            `;
+                break;
+            case 'Blocked':
+                htmlContent = `
+                <button class="btn btn-sm btn-bd-light rounded-2" title="Request to join" id="joinButton" disabled>
+                    Request to join
+                </button>
+            `;
+                break;
+            default:
+                htmlContent = ''; // Default case or error handling
+        }
+        return htmlContent;
+    }
+
+
+    // this function is used to create the dropdowns in members-catalog ("engagement option")
+    function createDropdown(buttonTextAndSym, dropdownTexts, dropdownActions) {
+        function createButtonDropDown(buttonTextAndSym) {
+            const button = document.createElement('button');
+            button.classList.add('btn', 'btn-sm', 'btn-bd-light', 'rounded-2', 'dropdown-toggle');
+            button.setAttribute('data-bs-toggle', 'dropdown');
+            button.setAttribute('aria-expanded', 'false');
+            button.innerHTML = `
+<svg class="bi">
+    <use xlink:href="${buttonTextAndSym[1]}"></use>
+</svg>
+${buttonTextAndSym[0]}`;
+            return button;
+        }
+
+        function createDropdownItem(text, action) {
+            const dropdownItem = document.createElement('li');
+            const dropdownLink = document.createElement('a');
+            dropdownLink.classList.add('dropdown-item', 'smaller-text');
+            dropdownLink.href = "javascript:void(0);";
+            dropdownLink.onclick = action; // Inject the action directly
+            dropdownLink.textContent = text;
+            dropdownItem.appendChild(dropdownLink);
+            return dropdownItem;
+        }
+
+        const dropdownDiv = document.createElement('div');
+        dropdownDiv.classList.add('threeDotsMenuContainer');
+
+        const button = createButtonDropDown(buttonTextAndSym);
+        const dropdownMenu = document.createElement('ul');
+        dropdownMenu.classList.add('dropdown-menu', 'custom-dropdown');
+
+        dropdownTexts.forEach((text, index) => {
+            const action = dropdownActions[index] instanceof Function ? dropdownActions[index] : () => { console.error('Action must be a function'); };
+            const dropdownItem = createDropdownItem(text, action);
+            dropdownMenu.appendChild(dropdownItem);
+        });
+
+        dropdownDiv.appendChild(button);
+        dropdownDiv.appendChild(dropdownMenu);
+
+        return dropdownDiv;
+    }
+
+
+    // this function is used to create a button for the members-catalog ("engagement option")
+    function createButton(text, iconRef) {
+        const button = document.createElement('button');
+        button.classList.add('btn', 'btn-sm', 'btn-bd-light', 'rounded-2');
+        button.innerHTML = `<svg class="bi"><use xlink:href="${iconRef}"></use></svg> ${text}`;
+        return button;
+    }
+
+
+    //remove active class from all chatroom links (the thing that makes the chatroom label highlighted)
+    function removeActiveClassFromLinks() {
+        document.querySelectorAll('.chatrooms-list.active').forEach(activeLink => {
+            activeLink.classList.remove('active');
+        });
+    }
+
+
+    // this function is used to scroll to the members section in the modal when the members link (under the headline) is clicked
+    function scrollToMembersSection(){
+        var memberSection = document.getElementById('member-section');
+        memberSection.scrollIntoView({ behavior: 'smooth' });
+    }
+
+
+
+
+    function openModal() {
+
+        // helper function to create the html of the members catalog and append it to the modal (including the load more button)
+        function loadProfiles(count,profiles) {
+
+            // the following functions are helper functions to create the profiles catalog (hence nested)
+            function createImage(profile) {
+                const img = document.createElement('img');
+                img.src = profile.imgSrc;
+                img.alt = profile.name;
+                img.classList.add('profile-img');
+                return img;
+            }
+
+            function createNameElement(profile) {
+                const nameElement = document.createElement('p');
+                nameElement.classList.add('full-name');
+                nameElement.textContent = profile.name;
+                return nameElement;
+            }
+            function createTagElement(tag) {
+                const tagElement = document.createElement('small');
+                tagElement.classList.add('custom-tag', 'd-inline-flex', 'mb-3', 'px-1', 'py-0', 'fw-semibold', 'alert', 'd-flex', 'align-items-center', 'round-1');
+                switch(tag) {
+                    case 'pending': tagElement.classList.add('alert-warning'); break;
+                    case 'blocked': tagElement.classList.add('alert-danger'); break;
+                    case 'admin': tagElement.classList.add('alert-primary'); break;
+                    case 'friends': tagElement.classList.add('alert-success'); break;
+                }
+                tagElement.textContent = tag;
+                return tagElement;
+            }
+            function createEngagementOptions(profile){
+                const amBlocked = amIBlocked(profile.id);
+                const engagementOptions = document.createElement('div');
+                engagementOptions.classList.add('engagement-options');
+                if(profile.tags.includes('friends')){
+                    engagementOptions.appendChild(createButton('Message', '#chat-left-dots'));
+                }else if (profile.tags.includes('blocked')) {
+                    engagementOptions.appendChild(createDropdown(['Blocked', '#person-slash'], ['Unblock'], ['unblockUser']));
+                } else if (profile.tags.includes('pending')) {
+                    engagementOptions.appendChild(createDropdown(['Request Sent', '#hourglass-split'], ['Cancel Request'], ['cancelRequest']));
+                } else if (profile.tags.includes('approve')) {
+                    engagementOptions.appendChild(createDropdown(['Approve Request', '#check2-circle'], ['Approve', 'Ignore'], ['approveRequest', 'rejectRequest']));
+                }
+                else if((!profile.tags.includes('self'))&&(!amBlocked)){
+                    engagementOptions.appendChild(createButton('Add Friend', '#person-add'));
+                }
+
+                return engagementOptions;
+            }
+
+            // Main logic for creating profile elements
+            const catalog = document.querySelector('.members-catalog');
+            const loadMoreButton = document.getElementById('loadMore');
+
+            // Keep track of how many profiles have been loaded
+            let loadedProfilesCount = 0;
+
+            profiles.slice(loadedProfilesCount, loadedProfilesCount + count).forEach(profile => {
+
+                const profileContainer = document.createElement('div');
+                profileContainer.classList.add('profile');
+
+                const profileDetails = document.createElement('div');
+                profileDetails.classList.add('profile-content');
+                profileDetails.appendChild(createImage(profile));
+
+
+                const nameAndTagsDiv = document.createElement('div');
+                nameAndTagsDiv.classList.add('profile-info');
+                const nameElement = createNameElement(profile)
+                nameAndTagsDiv.appendChild(nameElement);
+
+
+                profile.tags.forEach(tag => {
+                    if((tag !== 'self')&&(tag !== 'approve')){
+                        nameAndTagsDiv.appendChild(createTagElement(tag));
+                    }});
+
+                profileDetails.appendChild(nameAndTagsDiv);
+                profileContainer.appendChild(profileDetails);
+
+                const buttonOrDropdown = createEngagementOptions(profile);
+
+                profileContainer.appendChild(buttonOrDropdown);
+
+                catalog.appendChild(profileContainer);
+            });
+            loadedProfilesCount += count;
+
+            // Show or hide the Load More button
+            loadMoreButton.style.display = (loadedProfilesCount >= 4 && loadedProfilesCount < profiles.length) ? 'block' : 'none';
+
+        }// end of loadProfiles function
+
+
+        // Open the modal
+        var profileModal = document.getElementById('profileModal'); // Ensure this ID matches your modal's ID
+        profileModal.style.display = 'flex';
+
+        // Reset the scroll position to the top
+        profileModal.scrollTop = 0;
+
+        // Set the community bio
+        document.querySelector('.community-bio').textContent = community.bio;
+
+        // Update the modal community info labels
+        var modalCommunityInfoDiv = document.getElementById('modal-info-labels');
+        modalCommunityInfoDiv.innerHTML = createCommunityInfoLabel(community, 'membersLinkModal');
+
+        // create the membership button based on the user's membership status
+        var elementContainer = document.getElementById('membership-btn');
+        elementContainer.innerHTML = createMembershipButton(membershipStatus, notificationsItem, dividerItem, leaveCommunityItem);
+
+        // Update the member count next to the Members headline
+        var memberCountLabel = document.getElementById('memberCount');
+        memberCountLabel.innerHTML = `(${formattedMemberCount})`;
+
+        // Add smooth scrolling behavior for the members link in the modal
+        document.getElementById('membersLinkModal').addEventListener('click', function(event) {
+            event.preventDefault(); // Prevent the default anchor behavior
+            scrollToMembersSection();
+        });
+
+        // Load the initial profiles using the globally defined initialLoadAmount
+        loadProfiles(initialLoadAmount,profiles);
+
+        // Event listener for the Load More button
+        document.getElementById('loadMore').addEventListener('click', function() {
+            loadProfiles(loadMoreAmount,profiles);
+        });
+
+        //close the modal if clicking outside of it
+        document.getElementById('profileModal').addEventListener('click', function(event) {
+
+            // Check if the clicked target is the modal itself
+            if (event.target === this) {
+                document.getElementById('profileModal').style.display = 'none';
+                // Reset the profiles to the initial state of 9
+                const catalog = document.querySelector('.members-catalog');
+                catalog.innerHTML = '';  // Clear the existing profiles
+            }
+        });
+    }
+
+
+    //this function is used to format the member count (1.2k instead 0f 1200)
+    function formatMemberCount(memberCount) {
+        // Format member count
+        if (memberCount > 1000) {
+            return Math.round(memberCount / 1000) + 'k';
+        }
+        return memberCount.toString();
+    }
+
+
+    // this function is used to create the community info label (public/private + lock icon, formatted member count)
+    function createCommunityInfoLabel(community, linkId) {
+        // Determine privacy status and icon
+        const privacyStatus = community.privacySettings.approvalPolicy === 'admin-approval' ? 'Private' : 'Public';
+        const iconId = community.privacySettings.approvalPolicy === 'admin-approval' ? 'lock' : 'unlocked';
+        const memberCountFormatted = formatMemberCount(community.members.adminsList.length + community.members.membersList.length);
+
+        // Return the label as a template string, now with a dynamic link ID
+        return `
+        <svg class="bi me-1">
+            <use xlink:href="#${iconId}"></use>
+        </svg>
+        <small class="text-muted">${privacyStatus}</small>
+        <small class="text-muted"> • <a href="#member-section" id="${linkId}" style="color: inherit; text-decoration: none;">${memberCountFormatted} members</a></small>
+    `;
+    }
+
+
+    function closeProfileModal(){
+        var profileModal = document.getElementById('profileModal');
+        profileModal.style.display = 'none';
+    }
+
+
+    //this function is used to create the alert that appears when the user copies the community address to the clipboard
+    function showCopyAlert(message, alertClass) {
+        const alertsContainer = document.getElementById('alerts-container');
+        const alertElement = document.getElementById('copyAlert');
+
+        // Clear previous classes and add the new one
+        alertElement.className = `alert ${alertClass} alert-dismissible fade show`;
+        alertElement.textContent = message;
+
+        // Show the alerts container and adjust its height
+        alertsContainer.style.display = 'flex';
+        alertsContainer.style.height = 'auto'; // Allow the container to grow to fit the alert
+
+        // Hide the alert and its container after 3 seconds
+        setTimeout(() => {
+            alertElement.classList.remove('show');
+            setTimeout(() => { // Timeout to allow for fade out animation
+                alertsContainer.style.display = 'none';
+                alertsContainer.style.height = '0';
+            }, 150); // Should match the CSS transition duration
+        }, 3000);
+    }
+
+    //this function is used to copy the community address to the clipboard
+    function copyLinkToClipboard() {
+        const addressString = 'this is a sample address for the community';
+
+        navigator.clipboard.writeText(addressString).then(function() {
+            // Show success alert
+            showCopyAlert('Community address copied to clipboard!', 'alert-primary');
+        }, function(err) {
+            console.error('Failed to copy community address: ', err);
+            // Show error alert
+            showCopyAlert('Failed to copy community address.', 'alert-danger');
+        });
+    }
+
+    //opens the confirmation modal when the user clicks on the leave community button
+    function confirmLeaveCommunity() {
+        var confirmLeaveModal = new bootstrap.Modal(document.getElementById('confirmLeaveModal'));
+        confirmLeaveModal.show();
+    }
+
+</script>
+
+
+
 </body>
 </html>
+
+
+
+
